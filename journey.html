@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Journey - Sanjeevan's Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="icon" type="image/x-icon" href="./WhatsApp Image 2025-01-31 at 15.09.30_9dec6772.jpg" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    #showPptBtn {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 6px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+    #showPptBtn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="profile-photo">
+    <img src="./WhatsApp Image 2024-12-31 at 12.34.11_2c648827.jpg" alt="Sanjeev's Photo" />
+  </div>
+  <h1 style="font-size: clamp(20px, 5vw, 36px); margin: 2vh 0; animation: glow 3s ease-in-out infinite;">My Learning Journey</h1>
+  <h3 style="font-size: clamp(14px, 3.5vw, 20px); margin: 1vh 0;">From Beginner to Developer</h3>
+</header>
+
+<nav>
+  <a href="index.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a> 
+  <a href="journey.html">Journey</a>
+  <a href="hope3.html">HOPE3</a>
+  <a href="mentors.html">Mentors</a>
+  <a href="hobbies.html">Hobbies</a>
+  <a href="contact.html">Contact</a>
+  <button id="darkModeToggle">🌙</button>
+</nav>
+
+<section id="journey">
+  <h2>My Learning Journey</h2>
+  <div class="journey-timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">2022</div>
+      <div class="timeline-content">
+        <h4>🎓 Started at Anchetty HSS</h4>
+        <p>Began my educational journey with a focus on science and mathematics.</p>
+        <p>The starting point of my path towards technology.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">2024</div>
+      <div class="timeline-content">
+        <h4>💻 First Code</h4>
+        <p>Wrote my first "Hello World" in C programming language.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Mid 2024</div>
+      <div class="timeline-content">
+        <h4>🌐 Web Development</h4>
+        <p>Learned HTML, CSS, and started building my first websites, including my personal portfolio.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Late 2024</div>
+      <div class="timeline-content">
+        <h4>🍎 iOS Development</h4>
+        <p>Discovered Swift and fell in love with iOS app development, starting with simple projects.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Early 2025</div>
+      <div class="timeline-content">
+        <h4>📱 First Major iOS App</h4>
+        <p>Built an app with Google, Email, and Facebook authentication using Firebase, with email verification and auto-login.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Mid 2025</div>
+      <div class="timeline-content">
+        <h4>🎮 Game Development</h4>
+        <p>Created a Connect Four game in SwiftUI using my original C++ game logic and local Swift package integration.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">2025</div>
+      <div class="timeline-content">
+        <h4>🚀 HOPE3 Journey</h4>
+        <p>Joined the HOPE3 program, learning from industry mentors and working on real-world projects.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Present</div>
+      <div class="timeline-content">
+        <h4>🦀 Learning Rust & Databases</h4>
+        <p>Exploring Rust for API development and system programming, while working on MySQL e-commerce store projects.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Late 2025</div>
+      <div class="timeline-content">
+        <h4>🔧 Advanced Backend</h4>
+        <p>Building complex REST APIs with Rust and integrating with cloud databases for scalable applications.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">2026</div>
+      <div class="timeline-content">
+        <h4>🤖 AI Integration</h4>
+        <p>Exploring machine learning frameworks and integrating AI capabilities into mobile and web applications.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Future</div>
+      <div class="timeline-content">
+        <h4>🚀 Vision Ahead</h4>
+        <p>Aiming to contribute to open-source projects, build AI-powered apps, and explore cloud-based solutions.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 4vh;">
+    <button onclick="togglePPT()" style="background: #007BFF; color: white; padding: 2vh 4vw; border: none; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin: 0 1vw;">📊 View Detailed Journey</button>
+    <button onclick="toggleTimeline()" style="background: #28a745; color: white; padding: 2vh 4vw; border: none; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin: 0 1vw;">📈 Show Timeline Details</button>
+    <button onclick="toggleSkills()" style="background: #ffc107; color: black; padding: 2vh 4vw; border: none; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin: 0 1vw;">🛠️ Tech Stack</button>
+    
+    <div id="pptContainer" style="display: none; margin-top: 2vh;">
+      <iframe src="https://gamma.app/embed/6mronbutjl583di" style="width: 700px; max-width: 100%; height: 450px; border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" allow="fullscreen" title="My Journey into Web Development"></iframe>
+    </div>
+    
+    <div id="timelineDetails" style="display: none; margin-top: 2vh; background: #f8f9fa; padding: 3vh; border-radius: 15px; text-align: left;">
+      <h3>📅 Detailed Timeline Breakdown</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin: 1vh 0;">🎯 <strong>2022-2024:</strong> Foundation building with mathematics and first programming concepts</li>
+        <li style="margin: 1vh 0;">💡 <strong>2024:</strong> Rapid skill acquisition in web technologies and mobile development</li>
+        <li style="margin: 1vh 0;">🚀 <strong>2025:</strong> Advanced project development and mentorship through HOPE3</li>
+        <li style="margin: 1vh 0;">🔮 <strong>Future:</strong> Specialization in AI, cloud computing, and open-source contributions</li>
+      </ul>
+    </div>
+    
+    <div id="skillsContainer" style="display: none; margin-top: 2vh; background: #fff3cd; padding: 3vh; border-radius: 15px;">
+      <h3>🛠️ Current Tech Stack</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2vh; margin-top: 2vh;">
+        <div style="background: white; padding: 2vh; border-radius: 10px; border-left: 4px solid #007BFF;">
+          <h4>Frontend</h4>
+          <p>HTML5, CSS3, JavaScript, SwiftUI</p>
+        </div>
+        <div style="background: white; padding: 2vh; border-radius: 10px; border-left: 4px solid #28a745;">
+          <h4>Backend</h4>
+          <p>Rust, C++, MySQL, Firebase</p>
+        </div>
+        <div style="background: white; padding: 2vh; border-radius: 10px; border-left: 4px solid #ffc107;">
+          <h4>Mobile</h4>
+          <p>Swift, iOS Development, Xcode</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Sanjeeva Moorthy. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function togglePPT() {
+  const container = document.getElementById('pptContainer');
+  const button = event.target;
+  if (container.style.display === 'none') {
+    container.style.display = 'block';
+    button.textContent = '🔼 Hide Detailed Journey';
+  } else {
+    container.style.display = 'none';
+    button.textContent = '📊 View Detailed Journey';
+  }
+}
+
+function toggleTimeline() {
+  const container = document.getElementById('timelineDetails');
+  const button = event.target;
+  if (container.style.display === 'none') {
+    container.style.display = 'block';
+    button.textContent = '🔼 Hide Timeline Details';
+  } else {
+    container.style.display = 'none';
+    button.textContent = '📈 Show Timeline Details';
+  }
+}
+
+function toggleSkills() {
+  const container = document.getElementById('skillsContainer');
+  const button = event.target;
+  if (container.style.display === 'none') {
+    container.style.display = 'block';
+    button.textContent = '🔼 Hide Tech Stack';
+  } else {
+    container.style.display = 'none';
+    button.textContent = '🛠️ Tech Stack';
+  }
+}
+</script>
+
+</body>
+</html>
