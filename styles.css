@@ -152,6 +152,35 @@ section h2 {
   line-height: 1.6;
 }
 
+.flag-container {
+  text-align: center;
+  margin: 3vh 0;
+  background: url('./Life_pic.jpg') center/cover;
+  padding: 2vh;
+  border-radius: 20px;
+}
+
+.flag-image {
+  width: clamp(200px, 40vw, 300px);
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+  transition: all 0.3s ease;
+  animation: flagWave 3s ease-in-out infinite;
+}
+
+.flag-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(0, 123, 255, 0.5);
+}
+
+@keyframes flagWave {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(1deg); }
+  50% { transform: translateY(-8px) rotate(0deg); }
+  75% { transform: translateY(-5px) rotate(-1deg); }
+}
+
 .skills-grid, .projects-grid, .mentors-section, .contact-icons {
   display: grid;
   gap: 3vh;
@@ -696,6 +725,41 @@ body.dark-mode .timeline-date {
     margin-left: 80px;
     margin-right: 0;
   }
+}
+
+/* Enhanced Animations */
+.skills-grid div, .mentor-card {
+  animation: slideInUp 0.8s ease-out forwards, float 3s ease-in-out infinite;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.skills-grid div:hover, .mentor-card:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 15px 35px rgba(0,123,255,0.4);
+}
+.skills-grid div h4, .mentor-card h4 {
+  animation: bounce 2s infinite;
+}
+.contact-icons div {
+  animation: slideInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+.contact-icons div:nth-child(1) { animation-delay: 0.1s; }
+.contact-icons div:nth-child(2) { animation-delay: 0.2s; }
+.contact-icons div:nth-child(3) { animation-delay: 0.3s; }
+.contact-icons div:nth-child(4) { animation-delay: 0.4s; }
+@keyframes slideInUp {
+  0% { opacity: 0; transform: translateY(50px) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
 }
 
 /* Large desktop styles */

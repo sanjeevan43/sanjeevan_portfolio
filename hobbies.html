@@ -38,13 +38,46 @@
     <div><h4>📚 Reading</h4><p>Tech blogs and programming books</p></div>
     <div><h4>🎵 Music</h4><p>Listening to lo-fi and instrumental music</p></div>
   </div>
+    <div class="quote" style="background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,215,0,0.05)); border: 2px solid #f03a22; border-radius: 15px; padding: 2vh 3vw; margin: 2vh auto; max-width: 400px; text-align: center; box-shadow: 0 4px 15px rgba(255,215,0,0.3); animation: fadeInGlow 2s ease-out 1s forwards, float 4s ease-in-out infinite; opacity: 0;">
+    <p style="font-size: clamp(10px, 2.5vw, 14px); font-style: italic; color: #136db6; margin: 0;">அவள் ஒரு கனவு,<br>அதனால் தான், இன்று வரை விழிக்கவில்லை…</p>
+  </div>
 </section>
-
 <footer>
+
   <p>&copy; 2025 Sanjeeva Moorthy. All rights reserved.</p>
 </footer>
 
 <script src="script.js"></script>
+<style>
+#hobbies .skills-grid div {
+  animation: zoomIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+#hobbies .skills-grid div:nth-child(1) { animation-delay: 0.1s; }
+#hobbies .skills-grid div:nth-child(2) { animation-delay: 0.3s; }
+#hobbies .skills-grid div:nth-child(3) { animation-delay: 0.5s; }
+#hobbies .skills-grid div:nth-child(4) { animation-delay: 0.7s; }
+#hobbies .skills-grid div h4 {
+  animation: wiggle 2s ease-in-out infinite;
+}
+@keyframes zoomIn {
+  0% { opacity: 0; transform: scale(0.5) rotate(180deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+}
+@keyframes fadeInGlow {
+  0% { opacity: 0; transform: scale(0.8); box-shadow: 0 4px 15px rgba(255,215,0,0.3); }
+  100% { opacity: 1; transform: scale(1); box-shadow: 0 8px 25px rgba(255,215,0,0.6); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+</style>
 
 </body>
 </html>

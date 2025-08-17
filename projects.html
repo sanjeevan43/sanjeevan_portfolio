@@ -34,15 +34,16 @@
   <h2>My Projects</h2>
   <div class="projects-grid">
     <div class="project">
-      <h4>Portfolio Website</h4>
-      <p>My portfolio ❤️</p>
-      <a href="https://github.com/sanjeevan43/HTML" target="_blank">GitHub</a>
+      <h4>💻 My GitHub Profile</h4>
+      <p>Explore all my repositories and coding projects</p>
+      <a href="https://github.com/sanjeevan43" target="_blank">GitHub</a>
     </div>
     <div class="project">
-      <h4>Coming Soon</h4>
-      <p>More projects in development</p>
-      <a href="#">GitHub</a>  
+      <h4>🎬 Movie Booking System</h4>
+      <p>SQL database project for movie theater management</p>
+      <a href="https://github.com/sanjeevan43/MovieBookingSystem" target="_blank">GitHub</a>  
     </div>
+
   </div>
   <p class="quote">"Man needs difficulties in life because they are necessary to enjoy success."</p>
 </section>
@@ -52,6 +53,22 @@
 </footer>
 
 <script src="script.js"></script>
+<style>
+.project {
+  animation: slideInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+.project:nth-child(1) { animation-delay: 0.2s; }
+.project:nth-child(2) { animation-delay: 0.4s; }
+.project:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+@keyframes slideInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+</style>
 
 </body>
 </html>

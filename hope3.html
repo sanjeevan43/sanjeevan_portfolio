@@ -44,6 +44,27 @@
 </footer>
 
 <script src="script.js"></script>
+<style>
+#hope3 p {
+  animation: typewriter 3s steps(100) forwards;
+  opacity: 0;
+  animation-delay: 0.5s;
+}
+#hope3 a {
+  animation: bounceIn 1s ease-out 2s forwards;
+  opacity: 0;
+}
+@keyframes typewriter {
+  0% { opacity: 0; width: 0; }
+  1% { opacity: 1; }
+  100% { opacity: 1; width: 100%; }
+}
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+</style>
 
 </body>
 </html>
