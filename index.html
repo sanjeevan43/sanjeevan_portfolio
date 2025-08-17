@@ -11,7 +11,6 @@
 <body>
 
 <header>
-
   <div class="profile-photo">
     <img src="./WhatsApp Image 2024-12-31 at 12.34.11_2c648827.jpg" alt="Sanjeev's Photo" />
   </div>
@@ -28,16 +27,16 @@
   <a href="mentors.html">Mentors</a>
   <a href="hobbies.html">Hobbies</a>
   <a href="contact.html">Contact</a>
-    <a href="journey.html">Journey</a>
+  <a href="journey.html">Journey</a>
   <button id="darkModeToggle">🌙</button>
 </nav>
 
 <section id="about" class="about-me">
   <h2>About Me</h2>
   <p>I’m <strong>Sanjeev</strong> — a dreamer, creator, and lifelong learner. Some call me the <em>King of Dark</em>, a title I wear with pride as I navigate both the creative and technical worlds.</p>
-<p>Passionate about blending technology and artistry, I craft iOS apps with Swift and build complete solutions as a full-stack developer. I work with both frontend and backend, using SQL for database management and exploring the power of Rust for high-performance, reliable applications. I love solving challenges, experimenting with new ideas, and pushing the limits of what’s possible.</p>
-<p>Beyond code, I’m a believer in meaningful connections, imagination, and building things that leave a lasting impact. Every project I take on is a step forward in my journey of growth and innovation.</p>
-<p><strong>Date of Birth:</strong> March 30<br>
+  <p>Passionate about blending technology and artistry, I craft iOS apps with Swift and build complete solutions as a full-stack developer. I work with both frontend and backend, using SQL for database management and exploring the power of Rust for high-performance, reliable applications. I love solving challenges, experimenting with new ideas, and pushing the limits of what’s possible.</p>
+  <p>Beyond code, I’m a believer in meaningful connections, imagination, and building things that leave a lasting impact. Every project I take on is a step forward in my journey of growth and innovation.</p>
+  <p><strong>Date of Birth:</strong> March 30<br>
      <strong>Son of:</strong> Madesh<br>
      <strong>School:</strong> <a href="https://maps.app.goo.gl/PFHdueLQWYxm5ZVn8" target="_blank">Anchetty HSS</a>
   </p>
@@ -49,13 +48,15 @@
 
 <script src="script.js"></script>
 <style>
-gfbgbbhhbh  animation: fadeInUp 0.8s ease-out forwards;
+.about-me p {
+  animation: fadeInUp 0.8s ease-out forwards;
   opacity: 0;
 }
 .about-me p:nth-child(2) { animation-delay: 0.2s; }
 .about-me p:nth-child(3) { animation-delay: 0.4s; }
 .about-me p:nth-child(4) { animation-delay: 0.6s; }
 .about-me p:nth-child(5) { animation-delay: 0.8s; }
+
 @keyframes fadeInUp {
   0% { opacity: 0; transform: translateY(30px); }
   100% { opacity: 1; transform: translateY(0); }
