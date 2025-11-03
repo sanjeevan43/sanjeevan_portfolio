@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sanjeevan's Portfolio</title>
+  <title>Sanjeeva Moorthy - Software Developer Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="icon" type="image/x-icon" href="./WhatsApp Image 2025-01-31 at 15.09.30_9dec6772.jpg" />
   <link rel="stylesheet" href="styles.css" />
@@ -14,9 +14,9 @@
   <div class="profile-photo">
     <img src="./WhatsApp Image 2024-12-31 at 12.34.11_2c648827.jpg" alt="Sanjeev's Photo" />
   </div>
-  <h1 style="font-size: clamp(20px, 5vw, 36px); margin: 2vh 0; animation: glow 3s ease-in-out infinite;">Hi, I'm Sanjeeva Moorthy</h1>
-  <h3 style="font-size: clamp(14px, 3.5vw, 20px); margin: 1vh 0;">iOS Dev | Web Dev | Creative Coder</h3>
-  <p style="font-size: clamp(12px, 3vw, 16px); margin: 1vh 0;">King Of Dark – A Passionate Heart, A Creative Soul</p>
+  <h1 style="font-size: clamp(20px, 5vw, 36px); margin: 2vh 0; animation: glow 3s ease-in-out infinite;">Sanjeeva Moorthy</h1>
+  <h3 style="font-size: clamp(14px, 3.5vw, 20px); margin: 1vh 0;">Software Developer | Full-Stack Engineer | iOS Specialist</h3>
+  <p style="font-size: clamp(12px, 3vw, 16px); margin: 1vh 0;">Building innovative solutions with modern technologies</p>
 </header>
 
 <nav>
@@ -32,14 +32,21 @@
 </nav>
 
 <section id="about" class="about-me">
-  <h2>About Me</h2>
-  <p>I’m <strong>Sanjeev</strong> — a dreamer, creator, and lifelong learner. Some call me the <em>King of Dark</em>, a title I wear with pride as I navigate both the creative and technical worlds.</p>
-  <p>Passionate about blending technology and artistry, I craft iOS apps with Swift and build complete solutions as a full-stack developer. I work with both frontend and backend, using SQL for database management and exploring the power of Rust for high-performance, reliable applications. I love solving challenges, experimenting with new ideas, and pushing the limits of what’s possible.</p>
-  <p>Beyond code, I’m a believer in meaningful connections, imagination, and building things that leave a lasting impact. Every project I take on is a step forward in my journey of growth and innovation.</p>
-  <p><strong>Date of Birth:</strong> March 30<br>
-     <strong>Son of:</strong> Madesh<br>
-     <strong>School:</strong> <a href="https://maps.app.goo.gl/PFHdueLQWYxm5ZVn8" target="_blank">Anchetty HSS</a>
-  </p>
+  <h2>Professional Overview</h2>
+  <p>I'm <strong>Sanjeeva Moorthy</strong>, a dedicated software developer with expertise in full-stack development and mobile application engineering. I specialize in creating scalable, user-centric solutions that bridge the gap between innovative design and robust functionality.</p>
+  <p>My technical expertise spans iOS development with Swift, full-stack web development, and database architecture using SQL. I'm passionate about exploring emerging technologies like Rust for high-performance applications and implementing AI-driven solutions to solve complex problems.</p>
+  <p>I approach every project with a focus on clean code, optimal performance, and exceptional user experience. My commitment to continuous learning and innovation drives me to stay current with industry best practices and cutting-edge technologies.</p>
+  <div class="professional-details">
+    <div class="detail-item">
+      <strong>Education:</strong> <a href="https://maps.app.goo.gl/PFHdueLQWYxm5ZVn8" target="_blank">Anchetty Higher Secondary School</a>
+    </div>
+    <div class="detail-item">
+      <strong>Specialization:</strong> Software Development & Engineering
+    </div>
+    <div class="detail-item">
+      <strong>Focus Areas:</strong> Full-Stack Development, iOS Applications, Database Design
+    </div>
+  </div>
 </section>
 
 <footer>
@@ -55,7 +62,57 @@
 .about-me p:nth-child(2) { animation-delay: 0.2s; }
 .about-me p:nth-child(3) { animation-delay: 0.4s; }
 .about-me p:nth-child(4) { animation-delay: 0.6s; }
-.about-me p:nth-child(5) { animation-delay: 0.8s; }
+.about-me .professional-details { animation-delay: 0.8s; }
+
+.professional-details {
+  background: linear-gradient(135deg, #f8fbff, #e8f4ff);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid #007BFF;
+  margin-top: 2rem;
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.detail-item {
+  margin: 0.75rem 0;
+  font-size: clamp(14px, 3vw, 16px);
+  line-height: 1.6;
+}
+
+.detail-item strong {
+  color: #007BFF;
+  font-weight: 600;
+}
+
+.detail-item a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.detail-item a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+body.dark-mode .professional-details {
+  background: linear-gradient(135deg, #2a2a3a, #1e1e2e);
+  border-left-color: #4a90e2;
+}
+
+body.dark-mode .detail-item strong {
+  color: #4a90e2;
+}
+
+body.dark-mode .detail-item a {
+  color: #4a90e2;
+}
+
+body.dark-mode .detail-item a:hover {
+  color: #6bb6ff;
+}
 
 @keyframes fadeInUp {
   0% { opacity: 0; transform: translateY(30px); }

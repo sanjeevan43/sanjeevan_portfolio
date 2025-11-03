@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skills - Sanjeevan's Portfolio</title>
+  <title>Technical Skills - Sanjeeva Moorthy</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="icon" type="image/x-icon" href="./WhatsApp Image 2025-01-31 at 15.09.30_9dec6772.jpg" />
   <link rel="stylesheet" href="styles.css" />
@@ -14,13 +14,13 @@
   <div class="profile-photo">
     <img src="./WhatsApp Image 2024-12-31 at 12.34.11_2c648827.jpg" alt="Sanjeev's Photo" />
   </div>
-  <h1 style="font-size: clamp(20px, 5vw, 36px); margin: 2vh 0; animation: glow 3s ease-in-out infinite;">My Skills</h1>
-  <h3 style="font-size: clamp(14px, 3.5vw, 20px); margin: 1vh 0;">Technical Expertise & Learning Journey</h3>
+  <h1 style="animation: glow 3s ease-in-out infinite;">Technical Expertise</h1>
+  <h3>Core Competencies & Technologies</h3>
 </header>
 
 <nav>
   <a href="index.html">About</a>
-  <a href="skills.html">Skills</a>
+  <a href="skills.html" class="active">Skills</a>
   <a href="projects.html">Projects</a> 
   <a href="journey.html">Journey</a>
   <a href="hope3.html">HOPE3</a>
@@ -31,11 +31,76 @@
 </nav>
 
 <section id="skills">
-  <h2>My Skills</h2>
+  <h2>Technical Skills</h2>
   <div class="skills-grid">
-    <div><h4>Programming</h4><p>HTML, C, C++, SQL, Swift</p></div>
-    <div><h4>Currently Learning</h4><p>Rust API</p></div>
-    <div><h4>Interests</h4><p>Web Dev, iOS, Backend, API's</p></div>
+    <div class="skill-card">
+      <i class="fas fa-code" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+      <h4>Programming Languages</h4>
+      <p>Proficient in multiple programming paradigms with strong foundation in systems and application development.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">C/C++</span>
+        <span class="tech-tag">Swift</span>
+        <span class="tech-tag">HTML/CSS</span>
+        <span class="tech-tag">JavaScript</span>
+      </div>
+    </div>
+    
+    <div class="skill-card">
+      <i class="fas fa-database" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+      <h4>Database Management</h4>
+      <p>Experienced in designing and optimizing relational databases with complex query operations and data modeling.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">SQL</span>
+        <span class="tech-tag">Database Design</span>
+        <span class="tech-tag">Query Optimization</span>
+      </div>
+    </div>
+    
+    <div class="skill-card">
+      <i class="fas fa-mobile-alt" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+      <h4>iOS Development</h4>
+      <p>Native iOS application development with focus on user experience, performance optimization, and App Store guidelines.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">Swift</span>
+        <span class="tech-tag">UIKit</span>
+        <span class="tech-tag">Xcode</span>
+        <span class="tech-tag">iOS SDK</span>
+      </div>
+    </div>
+    
+    <div class="skill-card">
+      <i class="fas fa-globe" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+      <h4>Web Development</h4>
+      <p>Full-stack web development capabilities with modern frameworks and responsive design principles.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">Frontend</span>
+        <span class="tech-tag">Backend</span>
+        <span class="tech-tag">Responsive Design</span>
+        <span class="tech-tag">API Integration</span>
+      </div>
+    </div>
+    
+    <div class="skill-card">
+      <i class="fas fa-cogs" style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+      <h4>Currently Learning</h4>
+      <p>Expanding expertise in systems programming and high-performance computing with modern technologies.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">Rust</span>
+        <span class="tech-tag">API Development</span>
+        <span class="tech-tag">System Programming</span>
+      </div>
+    </div>
+    
+    <div class="skill-card">
+      <i class="fas fa-brain" style="font-size: 2.5rem; color: var(--success-color); margin-bottom: 1rem;"></i>
+      <h4>AI & Machine Learning</h4>
+      <p>Exploring artificial intelligence applications and implementing ML solutions for real-world problems.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">AI Integration</span>
+        <span class="tech-tag">Problem Solving</span>
+        <span class="tech-tag">Algorithm Design</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -44,19 +109,6 @@
 </footer>
 
 <script src="script.js"></script>
-<style>
-.skills-grid div {
-  animation: slideInRotate 0.8s ease-out forwards;
-  opacity: 0;
-}
-.skills-grid div:nth-child(1) { animation-delay: 0.1s; }
-.skills-grid div:nth-child(2) { animation-delay: 0.3s; }
-.skills-grid div:nth-child(3) { animation-delay: 0.5s; }
-@keyframes slideInRotate {
-  0% { opacity: 0; transform: translateX(-50px) rotate(-10deg); }
-  100% { opacity: 1; transform: translateX(0) rotate(0deg); }
-}
-</style>
 
 </body>
 </html>

@@ -14,8 +14,8 @@
   <div class="profile-photo">
     <img src="./WhatsApp Image 2024-12-31 at 12.34.11_2c648827.jpg" alt="Sanjeev's Photo" />
   </div>
-  <h1 style="font-size: clamp(20px, 5vw, 36px); margin: 2vh 0; animation: glow 3s ease-in-out infinite;">My Projects</h1>
-  <h3 style="font-size: clamp(14px, 3.5vw, 20px); margin: 1vh 0;">Creative Works & Development</h3>
+  <h1 style="font-size: clamp(20px, 5vw, 36px); margin: 2vh 0; animation: glow 3s ease-in-out infinite;">Portfolio Projects</h1>
+  <h3 style="font-size: clamp(14px, 3.5vw, 20px); margin: 1vh 0;">Software Development & Innovation</h3>
 </header>
 
 <nav>
@@ -31,27 +31,51 @@
 </nav>
 
 <section id="projects">
-  <h2>My Projects</h2>
+  <h2>Featured Projects</h2>
   <div class="projects-grid">
     <div class="project">
-      <h4>💻 My GitHub Profile</h4>
-      <p>Explore all my repositories and coding projects</p>
-      <a href="https://github.com/sanjeevan43" target="_blank">GitHub</a>
+      <div class="project-icon">💻</div>
+      <h4>GitHub Repository</h4>
+      <p>Comprehensive collection of software development projects showcasing expertise in multiple programming languages and frameworks</p>
+      <div class="tech-stack">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Java</span>
+        <span class="tech-tag">SQL</span>
+      </div>
+      <a href="https://github.com/sanjeevan43" target="_blank" class="project-link">View Repository</a>
     </div>
     <div class="project">
-      <h4>🎬 Movie Booking System</h4>
-      <p>SQL database project for movie theater management</p>
-      <a href="https://github.com/sanjeevan43/MovieBookingSystem" target="_blank">GitHub</a>  
+      <div class="project-icon">🎬</div>
+      <h4>Cinema Management System</h4>
+      <p>Full-stack movie booking platform with advanced database design, user authentication, and real-time seat availability tracking</p>
+      <div class="tech-stack">
+        <span class="tech-tag">SQL</span>
+        <span class="tech-tag">Database Design</span>
+        <span class="tech-tag">Backend</span>
+      </div>
+      <a href="https://github.com/sanjeevan43/MovieBookingSystem" target="_blank" class="project-link">View Code</a>  
     </div>
     <div class="project">
-      <h4>🧠 LeetCode Helper</h4>
-      <p>AI-powered assistant for solving LeetCode problems</p>
-      <a href="https://sanjeevan43.github.io/Leet-Code-AI/" target="_blank">Live Demo</a>
+      <div class="project-icon">🧠</div>
+      <h4>AI LeetCode Assistant</h4>
+      <p>Intelligent coding companion leveraging machine learning algorithms to provide optimized solutions and explanations for competitive programming challenges</p>
+      <div class="tech-stack">
+        <span class="tech-tag">AI/ML</span>
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">API Integration</span>
+      </div>
+      <a href="https://leet-code-ai-solver.vercel.app/" target="_blank" class="project-link">Live Application</a>
     </div>
-    <div class="project">
-      <h4>🚀 Coming Soon</h4>
-      <p>Exciting new project in development</p>
-      <span style="color: #888; font-style: italic;">Stay tuned!</span>
+    <div class="project coming-soon">
+      <div class="project-icon">🚀</div>
+      <h4>Next Innovation</h4>
+      <p>Advanced enterprise solution currently in development phase, focusing on scalable architecture and modern technologies</p>
+      <div class="tech-stack">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Node.js</span>
+        <span class="tech-tag">Cloud</span>
+      </div>
+      <span class="coming-soon-badge">In Development</span>
     </div>
    
   </div>
@@ -84,11 +108,131 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
+/* Professional project styling */
+.project {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff, #f8fbff);
+  border: 2px solid #e1e8ed;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.project::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #007BFF, #4a90e2);
+  transition: left 0.4s ease;
+}
+
+.project:hover::before {
+  left: 0;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+  border-color: #007BFF;
+  box-shadow: 0 20px 40px rgba(0, 123, 255, 0.15);
+}
+
+.project-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.project h4 {
+  color: #2c3e50;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.project p {
+  color: #5a6c7d;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  background: linear-gradient(135deg, #007BFF, #4a90e2);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.project-link {
+  display: inline-block;
+  background: linear-gradient(135deg, #007BFF, #4a90e2);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.project-link:hover {
+  background: linear-gradient(135deg, #0056b3, #357abd);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+.coming-soon {
+  opacity: 0.8;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #6c757d, #495057);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+body.dark-mode .project {
+  background: linear-gradient(135deg, #2a2a3a, #1e1e2e);
+  border-color: #4a4a5a;
+}
+
+body.dark-mode .project h4 {
+  color: #e0e6ed;
+}
+
+body.dark-mode .project p {
+  color: #b8c5d1;
+}
+
+body.dark-mode .coming-soon {
+  background: linear-gradient(135deg, #3a3a4a, #2e2e3e);
+}
+
 /* Glow effect for h1 */
 @keyframes glow {
-  0% { text-shadow: 0 0 5px #6ee7b7, 0 0 10px #34d399; }
-  50% { text-shadow: 0 0 15px #10b981, 0 0 30px #059669; }
-  100% { text-shadow: 0 0 5px #6ee7b7, 0 0 10px #34d399; }
+  0% { text-shadow: 0 0 5px rgba(0, 123, 255, 0.5); }
+  50% { text-shadow: 0 0 20px rgba(0, 123, 255, 0.8), 0 0 30px rgba(0, 123, 255, 0.6); }
+  100% { text-shadow: 0 0 5px rgba(0, 123, 255, 0.5); }
 }
 </style>
 

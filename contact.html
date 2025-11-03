@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Sanjeevan's Portfolio</title>
+  <title>Contact - Sanjeeva Moorthy</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="icon" type="image/x-icon" href="./WhatsApp Image 2025-01-31 at 15.09.30_9dec6772.jpg" />
   <link rel="stylesheet" href="styles.css" />
@@ -14,8 +14,8 @@
   <div class="profile-photo">
     <img src="./WhatsApp Image 2024-12-31 at 12.34.11_2c648827.jpg" alt="Sanjeev's Photo" />
   </div>
-  <h1 style="font-size: clamp(20px, 5vw, 36px); margin: 2vh 0; animation: glow 3s ease-in-out infinite;">Contact Me</h1>
-  <h3 style="font-size: clamp(14px, 3.5vw, 20px); margin: 1vh 0;">Let's Connect & Collaborate</h3>
+  <h1 style="animation: glow 3s ease-in-out infinite;">Get In Touch</h1>
+  <h3>Let's Build Something Amazing Together</h3>
 </header>
 
 <nav>
@@ -26,29 +26,55 @@
   <a href="hope3.html">HOPE3</a>
   <a href="mentors.html">Mentors</a>
   <a href="hobbies.html">Hobbies</a>
-  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="active">Contact</a>
   <button id="darkModeToggle">🌙</button>
 </nav>
 
 <section id="contact">
-  <h2>Contact Me</h2>
+  <h2>Contact Information</h2>
+  <p style="text-align: center; font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+    I'm always interested in discussing new opportunities, collaborations, and innovative projects. Feel free to reach out through any of the channels below.
+  </p>
+  
   <div class="contact-icons">
     <div>
       <i class="fas fa-envelope"></i>
-      <a href="mailto:sanjeevamoorthy35@gmail.com">Email</a>
+      <h4>Email</h4>
+      <a href="mailto:sanjeevamoorthy35@gmail.com">sanjeevamoorthy35@gmail.com</a>
+      <p>For professional inquiries and collaborations</p>
     </div>
-    <div>
-      <i class="fab fa-instagram"></i>
-      <a href="https://www.instagram.com/heartless_sanjeevan/" target="_blank">Instagram</a>
-    </div>
+    
     <div>
       <i class="fab fa-linkedin"></i>
-      <a href="https://in.linkedin.com/in/sanjeeva-moorthy-m-845917379?trk=public_profile_samename-profile" target="_blank">LinkedIn</a>
+      <h4>LinkedIn</h4>
+      <a href="https://in.linkedin.com/in/sanjeeva-moorthy-m-845917379?trk=public_profile_samename-profile" target="_blank">Professional Profile</a>
+      <p>Connect for networking and opportunities</p>
     </div>
+    
+    <div>
+      <i class="fab fa-github"></i>
+      <h4>GitHub</h4>
+      <a href="https://github.com/sanjeevan43" target="_blank">View My Code</a>
+      <p>Explore my open-source contributions</p>
+    </div>
+    
     <div>
       <i class="fas fa-phone"></i>
+      <h4>Phone</h4>
       <a href="tel:+919080750511">+91 9080750511</a>
+      <p>Available for urgent communications</p>
     </div>
+  </div>
+  
+  <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--background-light); border: 1px solid var(--border-color); border-radius: 16px;">
+    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Ready to Start a Project?</h3>
+    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+      Whether you need a mobile app, web application, or database solution, I'm here to help bring your ideas to life.
+    </p>
+    <a href="mailto:sanjeevamoorthy35@gmail.com" class="btn-primary">
+      <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>
+      Send Message
+    </a>
   </div>
 </section>
 
@@ -57,28 +83,6 @@
 </footer>
 
 <script src="script.js"></script>
-<style>
-.contact-icons div {
-  animation: bounceInUp 0.8s ease-out forwards;
-  opacity: 0;
-}
-.contact-icons div:nth-child(1) { animation-delay: 0.1s; }
-.contact-icons div:nth-child(2) { animation-delay: 0.3s; }
-.contact-icons div:nth-child(3) { animation-delay: 0.5s; }
-.contact-icons div:nth-child(4) { animation-delay: 0.7s; }
-.contact-icons i {
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes bounceInUp {
-  0% { opacity: 0; transform: translateY(100px) scale(0.5); }
-  60% { transform: translateY(-10px) scale(1.1); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
-}
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-}
-</style>
 
 </body>
 </html>
