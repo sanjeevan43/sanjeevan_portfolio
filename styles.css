@@ -7,9 +7,9 @@
 }
 
 :root {
-  --primary-color: #2563eb;
-  --primary-dark: #1d4ed8;
-  --primary-light: #3b82f6;
+  --primary-color: #52677d;
+  --primary-dark: #3e4f5e;
+  --primary-light: #6b7f95;
   --secondary-color: #64748b;
   --accent-color: #f59e0b;
   --success-color: #10b981;
@@ -151,12 +151,12 @@ nav a {
 
 nav a:hover {
   color: var(--primary-color);
-  background: rgba(37, 99, 235, 0.1);
+  background: rgba(82, 103, 125, 0.1);
 }
 
 nav a.active {
   color: var(--primary-color);
-  background: rgba(37, 99, 235, 0.1);
+  background: rgba(82, 103, 125, 0.1);
 }
 
 #darkModeToggle {
@@ -423,7 +423,7 @@ body.dark-mode .contact-icons div {
   text-align: center;
   margin: 3rem auto;
   padding: 2rem;
-  background: rgba(37, 99, 235, 0.05);
+  background: rgba(82, 103, 125, 0.05);
   border-left: 4px solid var(--primary-color);
   border-radius: 12px;
   max-width: 800px;
