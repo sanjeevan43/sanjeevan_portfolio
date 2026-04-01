@@ -3,81 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hobbies - Sanjeevan's Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <title>Hobbies | Sanjeeva Moorthy Portfolio | Sanjeev | Sanjeevan | King of Dark</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="icon" type="image/x-icon" href="./WhatsApp Image 2025-01-31 at 15.09.30_9dec6772.jpg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-<header>
-  <div class="profile-photo">
-    <img src="./WhatsApp Image 2024-12-31 at 12.34.11_2c648827.jpg" alt="Sanjeev's Photo" />
+  <div style="display:none;" aria-hidden="true">
+    Sanjeev, Sanjeevan, sanjeevamorrthy, devalaper sanjeevan, king of dark, developer sanjeevan
   </div>
-  <h1 style="font-size: clamp(20px, 5vw, 36px); margin: 2vh 0; animation: glow 3s ease-in-out infinite;">Hobbies & Interests</h1>
-  <h3 style="font-size: clamp(14px, 3.5vw, 20px); margin: 1vh 0;">Beyond Code & Technology</h3>
-</header>
 
-<nav>
-  <a href="index.html">About</a>
-  <a href="skills.html">Skills</a>
-  <a href="projects.html">Projects</a> 
-  <a href="journey.html">Journey</a>
-  <a href="hope3.html">HOPE3</a>
-  <a href="mentors.html">Mentors</a>
-  <a href="hobbies.html">Hobbies</a>
-  <a href="contact.html">Contact</a>
-  <button id="darkModeToggle">🌙</button>
-</nav>
+  <div class="custom-cursor"></div>
+  <div class="cursor-dot"></div>
 
-<section id="hobbies">
-  <h2>Hobbies & Interests</h2>
-  <div class="skills-grid">
-    <div><h4>📝 தமிழ் கவிதை</h4><p>தமிழ் கவிதை எழுதுதல் மற்றும் இலக்கியம் அறிதல்</p></div>
-    <div><h4>🎮 Gaming</h4><p>Strategy games and puzzle solving</p></div>
-    <div><h4>📚 Reading</h4><p>Tech blogs and programming books</p></div>
-    <div><h4>🎵 Music</h4><p>Listening to lo-fi and instrumental music</p></div>
+  <!-- Floating Background Orbs -->
+  <div class="bg-orbs">
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
   </div>
-    <div class="quote" style="background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,215,0,0.05)); border: 2px solid #f03a22; border-radius: 15px; padding: 2vh 3vw; margin: 2vh auto; max-width: 400px; text-align: center; box-shadow: 0 4px 15px rgba(255,215,0,0.3); animation: fadeInGlow 2s ease-out 1s forwards, float 4s ease-in-out infinite; opacity: 0;">
-    <p style="font-size: clamp(10px, 2.5vw, 14px); font-style: italic; color: #136db6; margin: 0;">அவள் ஒரு கனவு,<br>அதனால் தான், இன்று வரை விழிக்கவில்லை…</p>
+  <div class="page-transition"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
   </div>
-</section>
-<footer>
 
-  <p>&copy; 2025 Sanjeeva Moorthy. All rights reserved.</p>
-</footer>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
 
-<script src="script.js"></script>
-<style>
-#hobbies .skills-grid div {
-  animation: zoomIn 0.8s ease-out forwards;
-  opacity: 0;
-}
-#hobbies .skills-grid div:nth-child(1) { animation-delay: 0.1s; }
-#hobbies .skills-grid div:nth-child(2) { animation-delay: 0.3s; }
-#hobbies .skills-grid div:nth-child(3) { animation-delay: 0.5s; }
-#hobbies .skills-grid div:nth-child(4) { animation-delay: 0.7s; }
-#hobbies .skills-grid div h4 {
-  animation: wiggle 2s ease-in-out infinite;
-}
-@keyframes zoomIn {
-  0% { opacity: 0; transform: scale(0.5) rotate(180deg); }
-  100% { opacity: 1; transform: scale(1) rotate(0deg); }
-}
-@keyframes wiggle {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(5deg); }
-  75% { transform: rotate(-5deg); }
-}
-@keyframes fadeInGlow {
-  0% { opacity: 0; transform: scale(0.8); box-shadow: 0 4px 15px rgba(255,215,0,0.3); }
-  100% { opacity: 1; transform: scale(1); box-shadow: 0 8px 25px rgba(255,215,0,0.6); }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-}
-</style>
+  <!-- Back to Top Button -->
+  <button id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
+  <nav id="navbar">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="mentors.html">Mentors</a>
+    </div>
+
+    <button id="darkModeToggle">🌙</button>
+  </nav>
+
+  <header style="min-height: 50vh;">
+    <h1 class="reveal">Hobbies & Interests</h1>
+    <h3 class="reveal">Beyond Code & Technology</h3>
+    <p class="reveal">Exploring creativity, literature, and the balance of a developer's life.</p>
+  </header>
+
+  <main>
+    <section>
+      <div class="bento-grid">
+        <!-- Tamil Poetry -->
+        <div class="bento-card card-large reveal" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05));">
+          <div style="font-size: 3rem; margin-bottom: 1.5rem;">📝</div>
+          <h4>தமிழ் கவிதை</h4>
+          <p style="color: var(--text-secondary); line-height: 1.8;">Deeply passionate about Tamil literature and expressing thoughts through classical and modern Tamil poetry. Writing serves as a creative outlet for reflection and storytelling.</p>
+          <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-primary); border-radius: var(--border-radius-sm); border-left: 4px solid var(--accent-tertiary); font-style: italic;">
+            "அவள் ஒரு கனவு,<br>அதனால் தான், இன்று வரை விழிக்கவில்லை…"
+          </div>
+        </div>
+
+        <!-- Gaming -->
+        <div class="bento-card reveal">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎮</div>
+          <h4>Gaming</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Strategy games and puzzle solving to keeps the analytical mind sharp.</p>
+        </div>
+
+        <!-- Reading -->
+        <div class="bento-card reveal">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📚</div>
+          <h4>Reading</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Tech blogs, development journals, and classic literature.</p>
+        </div>
+
+        <!-- Music -->
+        <div class="bento-card reveal card-wide">
+          <div style="display: flex; align-items: center; gap: 2rem;">
+            <div style="font-size: 2.5rem; color: var(--accent-primary);"><i class="fas fa-headphones"></i></div>
+            <div>
+              <h4>Musical Balance</h4>
+              <p style="color: var(--text-secondary);">Lo-fi and instrumental tracks during deep work sessions for maximum focus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.linkedin.com/in/sanjeeva-moorthy-m-845917379" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/sanjeev_amoorthy_" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:sanjeevamoorthy35@gmail.com"><i class="fas fa-envelope"></i> sanjeevamoorthy35@gmail.com</a></li>
+          <li><a href="tel:+919080750511"><i class="fas fa-phone"></i> +91 90807 50511</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
+          <li><a href="skills.html"><i class="fas fa-brain"></i> Skills</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Sanjeeva Moorthy. Balancing code and life.</p>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+

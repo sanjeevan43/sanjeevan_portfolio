@@ -3,122 +3,285 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sanjeeva Moorthy - Software Developer Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <title>Sanjeeva Moorthy | Professional Software Developer Portfolio | Sanjeev | Sanjeevan | King of Dark</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Sanjeev (Sanjeevan), the King of Dark, is a professional software developer specializing in full-stack development, iOS development, and high-performance systems. Explore my projects and professional journey.">
+  <meta name="keywords" content="Sanjeeva Moorthy, Software Developer, Full-Stack Developer, iOS Developer, Swift, Rust, Python, Portfolio, Sanjeev, Sanjeevan, sanjeevamorrthy, sanjeevamoorthy, developer sanjeevan, devalaper sanjeevan, king of dark">
+  <meta name="author" content="Sanjeeva Moorthy">
+  <meta property="og:title" content="Sanjeeva Moorthy M | Software Developer">
+  <meta property="og:description" content="Crafting innovative digital experiences through elegant code and modern architecture.">
+  <meta property="og:type" content="website">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="icon" type="image/x-icon" href="./WhatsApp Image 2025-01-31 at 15.09.30_9dec6772.jpg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-<header>
-  <div class="profile-photo">
-    <img src="./WhatsApp Image 2024-12-31 at 12.34.11_2c648827.jpg" alt="Sanjeev's Photo" />
+  <div style="display:none;" aria-hidden="true">
+    Sanjeev, Sanjeevan, sanjeevamorrthy, devalaper sanjeevan, king of dark, developer sanjeevan
   </div>
-  <h1 style="font-size: clamp(20px, 5vw, 36px); margin: 2vh 0; animation: glow 3s ease-in-out infinite;">Sanjeeva Moorthy</h1>
-  <h3 style="font-size: clamp(14px, 3.5vw, 20px); margin: 1vh 0;">Software Developer | Full-Stack Engineer | iOS Specialist</h3>
-  <p style="font-size: clamp(12px, 3vw, 16px); margin: 1vh 0;">Building innovative solutions with modern technologies</p>
-</header>
 
-<nav>
-  <a href="index.html">About</a>
-  <a href="skills.html">Skills</a>
-  <a href="projects.html">Projects</a> 
-  <a href="hope3.html">HOPE3</a>
-  <a href="mentors.html">Mentors</a>
-  <a href="hobbies.html">Hobbies</a>
-  <a href="contact.html">Contact</a>
-  <a href="journey.html">Journey</a>
-  <button id="darkModeToggle">🌙</button>
-</nav>
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="cursor-dot"></div>
 
-<section id="about" class="about-me">
-  <h2>Professional Overview</h2>
-  <p>I'm <strong>Sanjeeva Moorthy</strong>, a dedicated software developer with expertise in full-stack development and mobile application engineering. I specialize in creating scalable, user-centric solutions that bridge the gap between innovative design and robust functionality.</p>
-  <p>My technical expertise spans iOS development with Swift, full-stack web development, and database architecture using SQL. I'm passionate about exploring emerging technologies like Rust for high-performance applications and implementing AI-driven solutions to solve complex problems.</p>
-  <p>I approach every project with a focus on clean code, optimal performance, and exceptional user experience. My commitment to continuous learning and innovation drives me to stay current with industry best practices and cutting-edge technologies.</p>
-  <div class="professional-details">
-    <div class="detail-item">
-      <strong>Education:</strong> <a href="https://maps.app.goo.gl/PFHdueLQWYxm5ZVn8" target="_blank">Anchetty Higher Secondary School</a>
-    </div>
-    <div class="detail-item">
-      <strong>Specialization:</strong> Software Development & Engineering
-    </div>
-    <div class="detail-item">
-      <strong>Focus Areas:</strong> Full-Stack Development, iOS Applications, Database Design
-    </div>
+  <!-- Page Transition Overlay -->
+  <div class="page-transition"></div>
+
+  <!-- Floating Background Orbs -->
+  <div class="bg-orbs">
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
   </div>
-</section>
 
-<footer>
-  <p>&copy; 2025 Sanjeeva Moorthy. All rights reserved.</p>
-</footer>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
 
-<script src="script.js"></script>
-<style>
-.about-me p {
-  animation: fadeInUp 0.8s ease-out forwards;
-  opacity: 0;
-}
-.about-me p:nth-child(2) { animation-delay: 0.2s; }
-.about-me p:nth-child(3) { animation-delay: 0.4s; }
-.about-me p:nth-child(4) { animation-delay: 0.6s; }
-.about-me .professional-details { animation-delay: 0.8s; }
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
 
-.professional-details {
-  background: linear-gradient(135deg, #f8fbff, #e8f4ff);
-  padding: 2rem;
-  border-radius: 12px;
-  border-left: 4px solid #007BFF;
-  margin-top: 2rem;
-  animation: fadeInUp 0.8s ease-out forwards;
-  opacity: 0;
-}
+  <!-- Back to Top Button -->
+  <button id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
-.detail-item {
-  margin: 0.75rem 0;
-  font-size: clamp(14px, 3vw, 16px);
-  line-height: 1.6;
-}
+  <nav id="navbar">
+    <div class="nav-links">
+      <a href="#hero" class="active">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="mentors.html">Mentors</a>
+    </div>
+    <button id="darkModeToggle" aria-label="Toggle Dark Mode" class="ripple">🌙</button>
+  </nav>
 
-.detail-item strong {
-  color: #007BFF;
-  font-weight: 600;
-}
+  <header id="hero">
+    <div class="hero-text">
+      <h1 class="reveal" title="Sanjeev | Sanjeevan | King of Dark">Sanjeeva Moorthy</h1>
+      <h3 class="reveal">I am a <span class="typing-text"></span></h3>
+      <p class="reveal">Crafting elegant, high-performance solutions with a focus on user experience and robust architecture.</p>
+      <div class="reveal" style="margin-top: 3.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="projects.html" class="btn-premium ripple">Explore Projects <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
+        <a href="journey.html" class="btn-premium ripple" style="background: transparent; border: 1px solid var(--accent-primary); color: var(--accent-primary);">My Journey</a>
+      </div>
+      <a href="#" class="btn-download reveal" onclick="alert('Add your resume PDF file and update the link here!'); return false;">
+        <i class="fas fa-download"></i> Download CV
+      </a>
+    </div>
+    
+    <div class="hero-visual reveal">
+      <div class="floating-badge badge-1">
+        <i class="fas fa-code" style="color: var(--accent-primary);"></i>
+        <span>Full-Stack Developer</span>
+      </div>
+      <div class="floating-badge badge-2">
+        <i class="fab fa-apple" style="color: var(--accent-tertiary);"></i>
+        <span>iOS Developer</span>
+      </div>
+      <div class="floating-badge badge-3">
+        <i class="fas fa-magic" style="color: var(--accent-secondary);"></i>
+        <span>Creative Coder</span>
+      </div>
+      <div class="floating-badge badge-4">
+        <i class="fas fa-database" style="color: #4479A1;"></i>
+        <span>Database Designer</span>
+      </div>
+      <div class="profile-photo">
+        <img src="./WhatsApp Image 2024-12-31 at 12.34.11_2c648827.jpg" alt="Sanjeev (Sanjeevan), sanjeevamorrthy, developer sanjeevan, king of dark's Professional Photo" loading="lazy" />
+      </div>
+    </div>
+  </header>
 
-.detail-item a {
-  color: #007BFF;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
+  <main>
+    <!-- Animated Stats Counter -->
+    <section id="stats">
+      <div class="stats-grid">
+        <div class="stat-card reveal-scale stagger-1">
+          <div class="stat-number" data-target="5" data-suffix="+">0</div>
+          <div class="stat-label">Projects Built</div>
+        </div>
+        <div class="stat-card reveal-scale stagger-2">
+          <div class="stat-number" data-target="6" data-suffix="+">0</div>
+          <div class="stat-label">Languages Known</div>
+        </div>
+        <div class="stat-card reveal-scale stagger-3">
+          <div class="stat-number" data-target="1" data-suffix="">0</div>
+          <div class="stat-label">Published Extension</div>
+        </div>
+        <div class="stat-card reveal-scale stagger-4">
+          <div class="stat-number" data-target="100" data-suffix="%">0</div>
+          <div class="stat-label">Passion & Dedication</div>
+        </div>
+      </div>
+    </section>
 
-.detail-item a:hover {
-  color: #0056b3;
-  text-decoration: underline;
-}
+    <!-- About Section -->
+    <section id="about">
+      <div class="bento-grid">
+        <div class="bento-card card-large reveal-left">
+          <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem; font-size: 1.8rem;">Professional Overview</h2>
+          <p style="margin-bottom: 1rem; color: var(--text-secondary);">I am a dedicated software developer specializing in scalable, user-centric solutions. With a deep passion for bridging the gap between innovative design and technical excellence, I excel in high-performance application development.</p>
+          <p style="color: var(--text-secondary);">From iOS development with Swift to robust backend architectures, I thrive on solving complex problems with clean, efficient code.</p>
+        </div>
 
-body.dark-mode .professional-details {
-  background: linear-gradient(135deg, #2a2a3a, #1e1e2e);
-  border-left-color: #4a90e2;
-}
+        <div class="bento-card reveal-right card-tall stagger-1">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌟</div>
+          <h4>Highlights</h4>
+          <ul style="list-style: none; color: var(--text-muted); font-size: 0.95rem; line-height: 2.2;">
+            <li>✨ Full-stack Development</li>
+            <li>📱 iOS Application Design</li>
+            <li>⚡ Performance Optimization</li>
+            <li>🛡️ Secure Architecture</li>
+            <li>🚀 Continuous Innovation</li>
+          </ul>
+        </div>
 
-body.dark-mode .detail-item strong {
-  color: #4a90e2;
-}
+        <div class="bento-card reveal-flip stagger-2">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">🚀</div>
+          <h4>Experience</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Specializing in Full-Stack, iOS & Database Design.</p>
+        </div>
 
-body.dark-mode .detail-item a {
-  color: #4a90e2;
-}
+        <div class="bento-card reveal-flip stagger-3">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">🎯</div>
+          <h4>Strategy</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Crafting roadmap-driven technical solutions.</p>
+        </div>
 
-body.dark-mode .detail-item a:hover {
-  color: #6bb6ff;
-}
+        <div class="bento-card card-wide reveal-rotate">
+          <div style="display: flex; align-items: center; gap: 1.5rem;">
+            <div style="font-size: 2.5rem;">🎓</div>
+            <div>
+              <h4 style="margin-bottom: 0.25rem;">Education</h4>
+              <p style="color: var(--text-secondary);">Anchetty Higher Secondary School</p>
+              <a href="https://maps.app.goo.gl/PFHdueLQWYxm5ZVn8" target="_blank" style="font-size: 0.8rem; color: var(--accent-primary); text-decoration: none;">View Location →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-</style>
+    <!-- GitHub Activity Card -->
+    <section id="github">
+      <h2 class="section-title reveal-left">Open Source Activity</h2>
+      <div class="github-card reveal-flip">
+        <img src="https://avatars.githubusercontent.com/sanjeevan43" alt="GitHub Avatar" class="github-avatar" />
+        <div class="github-info">
+          <h4>sanjeevan43</h4>
+          <p>Building tools that matter. Check out my code, contribute, or follow for updates.</p>
+          <div class="github-stats-row">
+            <div class="github-stat"><i class="fas fa-code-branch"></i> 10+ Repos</div>
+            <div class="github-stat"><i class="fas fa-star"></i> Open Source</div>
+            <div class="github-stat"><i class="fas fa-puzzle-piece"></i> 1 Extension</div>
+          </div>
+          <a href="https://github.com/sanjeevan43" target="_blank" class="btn-premium" style="margin-top: 1rem; font-size: 0.85rem; padding: 0.6rem 1.5rem;"><i class="fab fa-github"></i> View Profile</a>
+        </div>
+      </div>
+    </section>
 
+    <!-- Testimonials / Endorsements -->
+    <section id="testimonials">
+      <h2 class="section-title reveal-right">What People Say</h2>
+      <div class="testimonial-card reveal-scale">
+        <div class="testimonial-slide" style="transition: opacity 0.5s ease;">
+          <blockquote>Sanjeeva has an exceptional ability to take complex technical challenges and deliver clean, elegant solutions. His dedication to code quality is outstanding.</blockquote>
+          <div class="testimonial-author">Mentor & Senior Developer</div>
+          <div class="testimonial-role">Professional Endorsement</div>
+        </div>
+        <div class="testimonial-slide" style="display:none; transition: opacity 0.5s ease;">
+          <blockquote>A creative problem-solver who brings both technical depth and design sensibility to every project. Always eager to learn and push boundaries.</blockquote>
+          <div class="testimonial-author">Peer Colleague</div>
+          <div class="testimonial-role">Collaboration Feedback</div>
+        </div>
+        <div class="testimonial-slide" style="display:none; transition: opacity 0.5s ease;">
+          <blockquote>From building the Apexon extension to full-stack applications, Sanjeeva consistently delivers production-ready work with remarkable attention to detail.</blockquote>
+          <div class="testimonial-author">Project Reviewer</div>
+          <div class="testimonial-role">Technical Assessment</div>
+        </div>
+        <div class="testimonial-dots">
+          <button class="testimonial-dot active" aria-label="Testimonial 1"></button>
+          <button class="testimonial-dot" aria-label="Testimonial 2"></button>
+          <button class="testimonial-dot" aria-label="Testimonial 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Currently Working On -->
+    <section id="status">
+      <div class="status-card reveal-left">
+        <div class="status-pulse"></div>
+        <div class="status-content">
+          <h4>Currently Working On</h4>
+          <p>Building a gamified Tamil-English learning app with Flutter & exploring advanced Rust memory management for backend systems.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section id="links" style="padding-top: 0;">
+      <div class="bento-grid">
+         <a href="projects.html" class="bento-card reveal ripple" style="text-decoration: none; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); color: pink;">
+           <h4 style="color: white; margin-bottom: 0.5rem;">View Projects</h4>
+           <p style="font-size: 0.85rem; opacity: 0.9; color: rgba(255,255,255,0.8);">Explore my latest work and case studies.</p>
+           <div style="position: absolute; bottom: 1rem; right: 1.5rem; font-size: 1.5rem; color: white;">→</div>
+         </a>
+         
+         <a href="journey.html" class="bento-card reveal ripple" style="text-decoration: none;">
+           <h4 style="margin-bottom: 0.5rem;">My Journey</h4>
+           <p style="font-size: 0.85rem; color: var(--text-muted);">The path that shaped my career.</p>
+           <div style="position: absolute; bottom: 1rem; right: 1.5rem; font-size: 1rem; color: var(--accent-primary);">Read →</div>
+         </a>
+
+         <a href="skills.html" class="bento-card reveal ripple" style="text-decoration: none;">
+           <h4 style="margin-bottom: 0.5rem;">Tech Stack</h4>
+           <p style="font-size: 0.85rem; color: var(--text-muted);">Languages, tools, and frameworks.</p>
+         </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.linkedin.com/in/sanjeeva-moorthy-m-845917379" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/sanjeev_amoorthy_" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:sanjeevamoorthy35@gmail.com"><i class="fas fa-envelope"></i> sanjeevamoorthy35@gmail.com</a></li>
+          <li><a href="tel:+919080750511"><i class="fas fa-phone"></i> +91 90807 50511</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Links</h4>
+        <ul class="footer-links">
+          <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
+          <li><a href="skills.html"><i class="fas fa-brain"></i> Skills</a></li>
+          <li><a href="journey.html"><i class="fas fa-route"></i> Journey</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Sanjeeva Moorthy. Developed with Passion.</p>
+      <p><i class="fas fa-code-branch"></i> v2.0 Premium Upgrade</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+

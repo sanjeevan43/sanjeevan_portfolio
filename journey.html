@@ -3,166 +3,243 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Professional Journey - Sanjeeva Moorthy</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <title>Journey | Sanjeeva Moorthy Portfolio | Sanjeev | Sanjeevan | King of Dark</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="icon" type="image/x-icon" href="./WhatsApp Image 2025-01-31 at 15.09.30_9dec6772.jpg" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Custom Timeline Styles for Journey Page */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: var(--bg-tertiary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+      border-radius: 10px;
+    }
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: -10px;
+      background-color: var(--bg-primary);
+      border: 4px solid var(--accent-primary);
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+      transition: var(--transition-fast);
+    }
+    .left { left: 0; text-align: right; }
+    .right { left: 50%; text-align: left; }
+    .right::after { left: -10px; }
+    
+    .timeline-content {
+      padding: 2rem;
+      background: var(--bg-secondary);
+      position: relative;
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--glass-border);
+      transition: var(--transition-smooth);
+    }
+    .timeline-item:hover .timeline-content {
+      transform: translateY(-5px);
+      border-color: var(--accent-primary);
+      box-shadow: var(--card-hover-shadow);
+    }
+    .timeline-item:hover::after {
+      background-color: var(--accent-primary);
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      .timeline::after { left: 31px; }
+      .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left; }
+      .timeline-item::after { left: 21px; }
+      .left { left: 0; }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <div class="profile-photo">
-    <img src="./WhatsApp Image 2024-12-31 at 12.34.11_2c648827.jpg" alt="Sanjeev's Photo" />
-  </div>
-  <h1 style="animation: glow 3s ease-in-out infinite;">Professional Journey</h1>
-  <h3>Evolution of a Software Developer</h3>
-</header>
-
-<nav>
-  <a href="index.html">About</a>
-  <a href="skills.html">Skills</a>
-  <a href="projects.html">Projects</a> 
-  <a href="journey.html" class="active">Journey</a>
-  <a href="hope3.html">HOPE3</a>
-  <a href="mentors.html">Mentors</a>
-  <a href="hobbies.html">Hobbies</a>
-  <a href="contact.html">Contact</a>
-  <button id="darkModeToggle">🌙</button>
-</nav>
-
-<section id="journey">
-  <h2>Development Timeline</h2>
-  <div class="journey-timeline">
-    <div class="timeline-item">
-      <div class="timeline-date">2022</div>
-      <div class="timeline-content">
-        <h4><i class="fas fa-graduation-cap"></i> Academic Foundation</h4>
-        <p>Commenced secondary education at Anchetty Higher Secondary School, establishing strong fundamentals in mathematics and logical reasoning that would later support programming concepts.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">2024</div>
-      <div class="timeline-content">
-        <h4><i class="fas fa-code"></i> Programming Introduction</h4>
-        <p>First exposure to programming through C language, mastering fundamental concepts including data structures, algorithms, and memory management principles.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">Mid 2024</div>
-      <div class="timeline-content">
-        <h4><i class="fas fa-globe"></i> Web Development Mastery</h4>
-        <p>Acquired proficiency in HTML5, CSS3, and JavaScript. Developed responsive web applications and established expertise in frontend development methodologies.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">Late 2024</div>
-      <div class="timeline-content">
-        <h4><i class="fab fa-apple"></i> iOS Development Specialization</h4>
-        <p>Transitioned to mobile development with Swift programming language, focusing on iOS application architecture and user interface design principles.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">Early 2025</div>
-      <div class="timeline-content">
-        <h4><i class="fas fa-mobile-alt"></i> Advanced Mobile Solutions</h4>
-        <p>Engineered comprehensive iOS applications featuring multi-platform authentication (Google, Facebook, Email) with Firebase integration and automated user session management.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">2025</div>
-      <div class="timeline-content">
-        <h4><i class="fas fa-rocket"></i> HOPE3 Professional Development</h4>
-        <p>Enrolled in industry mentorship program, collaborating with experienced professionals on real-world software development projects and best practices.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">Present</div>
-      <div class="timeline-content">
-        <h4><i class="fas fa-database"></i> Systems Programming & Database Architecture</h4>
-        <p>Currently expanding expertise in Rust programming for high-performance applications and advanced database design for enterprise-level solutions.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">2025-2026</div>
-      <div class="timeline-content">
-        <h4><i class="fas fa-brain"></i> AI Integration & Cloud Computing</h4>
-        <p>Planned advancement into artificial intelligence applications, machine learning frameworks, and cloud-based architecture for scalable software solutions.</p>
-      </div>
-    </div>
+  <div style="display:none;" aria-hidden="true">
+    Sanjeev, Sanjeevan, sanjeevamorrthy, devalaper sanjeevan, king of dark, developer sanjeevan
   </div>
 
-  <div style="text-align: center; margin-top: 3rem;">
-    <div style="background: var(--background-light); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem; margin-bottom: 2rem;">
-      <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Key Achievements</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-        <div style="text-align: left;">
-          <h4><i class="fas fa-trophy" style="color: var(--accent-color);"></i> Technical Milestones</h4>
-          <ul style="list-style: none; padding-left: 1rem;">
-            <li>• Multi-platform authentication systems</li>
-            <li>• Database-driven applications</li>
-            <li>• Cross-platform development</li>
-          </ul>
+  <div class="custom-cursor"></div>
+  <div class="cursor-dot"></div>
+
+  <!-- Floating Background Orbs -->
+  <div class="bg-orbs">
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
+  </div>
+  <div class="page-transition"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <nav id="navbar">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="mentors.html">Mentors</a>
+    </div>
+
+    <button id="darkModeToggle">🌙</button>
+  </nav>
+
+  <header style="min-height: 50vh;">
+    <h1 class="reveal">My Journey</h1>
+    <h3 class="reveal">Evolution of a Software Developer</h3>
+    <p class="reveal">A timeline of growth, learning, and the continuous pursuit of technical excellence.</p>
+  </header>
+
+  <main>
+    <section>
+      <div class="timeline">
+        <!-- 2022 -->
+        <div class="timeline-item left reveal">
+          <div class="timeline-content">
+            <h4 style="color: var(--accent-primary); margin-bottom: 0.5rem;">2022</h4>
+            <h5 style="margin-bottom: 1rem;"><i class="fas fa-graduation-cap"></i> Academic Foundation</h5>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Established strong fundamentals in mathematics and logic at Anchetty Higher Secondary School.</p>
+          </div>
         </div>
-        <div style="text-align: left;">
-          <h4><i class="fas fa-users" style="color: var(--success-color);"></i> Professional Growth</h4>
-          <ul style="list-style: none; padding-left: 1rem;">
-            <li>• Industry mentorship participation</li>
-            <li>• Real-world project experience</li>
-            <li>• Collaborative development practices</li>
-          </ul>
+
+        <!-- 2024 -->
+        <div class="timeline-item right reveal">
+          <div class="timeline-content">
+            <h4 style="color: var(--accent-primary); margin-bottom: 0.5rem;">2024</h4>
+            <h5 style="margin-bottom: 1rem;"><i class="fas fa-code"></i> Programming Intro</h5>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">First exposure to C programming, mastering data structures and algorithms.</p>
+          </div>
+        </div>
+
+        <!-- Mid 2024 -->
+        <div class="timeline-item left reveal">
+          <div class="timeline-content">
+            <h4 style="color: var(--accent-primary); margin-bottom: 0.5rem;">Mid 2024</h4>
+            <h5 style="margin-bottom: 1rem;"><i class="fas fa-globe"></i> Web Mastery</h5>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Gained proficiency in HTML5, CSS3, and JavaScript, building responsive applications.</p>
+          </div>
+        </div>
+
+        <!-- Late 2024 -->
+        <div class="timeline-item right reveal">
+          <div class="timeline-content">
+            <h4 style="color: var(--accent-primary); margin-bottom: 0.5rem;">Late 2024</h4>
+            <h5 style="margin-bottom: 1rem;"><i class="fab fa-apple"></i> iOS Specialization</h5>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Transitioned to Swift and mobile architecture, focusing on premium UI design.</p>
+          </div>
+        </div>
+
+        <!-- Early 2025 -->
+        <div class="timeline-item left reveal">
+          <div class="timeline-content">
+            <h4 style="color: var(--accent-primary); margin-bottom: 0.5rem;">Early 2025</h4>
+            <h5 style="margin-bottom: 1rem;"><i class="fas fa-mobile-alt"></i> Advanced Solutions</h5>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Developed complex iOS apps with Firebase integration and multi-platform auth.</p>
+          </div>
+        </div>
+
+        <!-- Present -->
+        <div class="timeline-item right reveal">
+          <div class="timeline-content">
+            <h4 style="color: var(--accent-primary); margin-bottom: 0.5rem;">Present</h4>
+            <h5 style="margin-bottom: 1rem;"><i class="fas fa-rocket"></i> Future-Forward</h5>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Expanding into Rust for high-performance systems and AI integration.</p>
+          </div>
         </div>
       </div>
+    </section>
+
+    <section>
+      <div class="bento-grid">
+        <div class="bento-card reveal card-wide" style="display: flex; align-items: center; gap: 2rem;">
+          <div style="font-size: 3rem; color: var(--accent-primary);"><i class="fas fa-trophy"></i></div>
+          <div>
+            <h4>Technical Milestones</h4>
+            <p style="color: var(--text-secondary);">Multi-platform authentication, Database-driven architectures, and High-performance systems development.</p>
+          </div>
+        </div>
+        <div class="bento-card reveal card-wide" style="display: flex; align-items: center; gap: 2rem;">
+          <div style="font-size: 3rem; color: var(--accent-secondary);"><i class="fas fa-brain"></i></div>
+          <div>
+            <h4>Continuous Growth</h4>
+            <p style="color: var(--text-secondary);">Enrolled in premium industry mentorship programs, collaborating on real-world production level codebases.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.linkedin.com/in/sanjeeva-moorthy-m-845917379" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/sanjeev_amoorthy_" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:sanjeevamoorthy35@gmail.com"><i class="fas fa-envelope"></i> sanjeevamoorthy35@gmail.com</a></li>
+          <li><a href="tel:+919080750511"><i class="fas fa-phone"></i> +91 90807 50511</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
+          <li><a href="skills.html"><i class="fas fa-brain"></i> Skills</a></li>
+        </ul>
+      </div>
     </div>
-    
-    <button onclick="toggleDetails()" class="btn-primary">
-      <i class="fas fa-chart-line"></i> View Detailed Timeline
-    </button>
-  </div>
-
-  <div id="detailedTimeline" style="display: none; margin-top: 2rem; background: var(--background-light); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem;">
-    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Technology Stack Evolution</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-      <div style="background: rgba(37, 99, 235, 0.1); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--primary-color);">
-        <h4>Frontend Technologies</h4>
-        <p>HTML5, CSS3, JavaScript, SwiftUI, Responsive Design</p>
-      </div>
-      <div style="background: rgba(16, 185, 129, 0.1); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--success-color);">
-        <h4>Backend & Systems</h4>
-        <p>C/C++, Rust, SQL, Firebase, API Development</p>
-      </div>
-      <div style="background: rgba(245, 158, 11, 0.1); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--accent-color);">
-        <h4>Mobile Development</h4>
-        <p>Swift, iOS SDK, Xcode, Authentication Systems</p>
-      </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Sanjeeva Moorthy. The Journey Continues.</p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<footer>
-  <p>&copy; 2025 Sanjeeva Moorthy. All rights reserved.</p>
-</footer>
 
-<script src="script.js"></script>
-<script>
-function toggleDetails() {
-  const container = document.getElementById('detailedTimeline');
-  const button = event.target;
-  if (container.style.display === 'none') {
-    container.style.display = 'block';
-    button.innerHTML = '<i class="fas fa-chart-line"></i> Hide Detailed Timeline';
-  } else {
-    container.style.display = 'none';
-    button.innerHTML = '<i class="fas fa-chart-line"></i> View Detailed Timeline';
-  }
-}
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
