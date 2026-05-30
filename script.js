@@ -1,17 +1,9 @@
-const state = {
-  typingText: ["Full-Stack Developer", "iOS Developer", "Database Designer", "Product-minded Builder"],
-  typeIndex: 0,
-  charIndex: 0,
-  isDeleting: false
-};
-
 document.addEventListener("DOMContentLoaded", () => {
   initPreloader();
   initRevealAnimations();
   initThemeToggle();
   initNavbarEffects();
   initBackToTop();
-  initTypingEffect();
   initScrollProgress();
   initFormValidation();
   initActiveNav();
@@ -100,34 +92,6 @@ function initBackToTop() {
 
   update();
   window.addEventListener("scroll", update, { passive: true });
-}
-
-function initTypingEffect() {
-  const target = document.querySelector(".typing-text");
-  if (!target) return;
-
-  const tick = () => {
-    const word = state.typingText[state.typeIndex];
-    state.charIndex += state.isDeleting ? -1 : 1;
-    target.textContent = word.slice(0, state.charIndex);
-
-    let delay = state.isDeleting ? 52 : 82;
-
-    if (!state.isDeleting && state.charIndex === word.length) {
-      delay = 1350;
-      state.isDeleting = true;
-    }
-
-    if (state.isDeleting && state.charIndex === 0) {
-      state.isDeleting = false;
-      state.typeIndex = (state.typeIndex + 1) % state.typingText.length;
-      delay = 260;
-    }
-
-    window.setTimeout(tick, delay);
-  };
-
-  tick();
 }
 
 function initScrollProgress() {
