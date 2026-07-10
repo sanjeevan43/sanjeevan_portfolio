@@ -22,24 +22,29 @@
   <div class="page-transition"></div>
   <div id="preloader"><div class="loader"></div></div>
   <div class="scroll-progress"></div>
+  <div class="blob-glow blob-1"></div>
+  <div class="blob-glow blob-2"></div>
+  <div class="blob-glow blob-3"></div>
 
   <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
   <nav id="navbar">
     <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="skills.html">Skills</a>
-      <a href="mentors.html">Mentors</a>
+      <a href="#home" class="active">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#mentors">Mentors</a>
+      <a href="#journey">Journey</a>
+      <a href="#hobbies">Hobbies</a>
     </div>
     <button id="darkModeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
   </nav>
 
-  <header id="hero">
+  <header id="home">
     <div class="hero-text">
       <h1 class="reveal" title="Sanjeev | Sanjeevan">Sanjeeva Moorthy</h1>
-      <h3 class="reveal">Full-stack developer for web, iOS, and data tools.</h3>
-      <p class="reveal">A software developer focused on full-stack products, iOS experiences, database architecture, and practical tools that turn messy workflows into clean, usable systems.</p>
+      <h3 class="reveal">Full-stack developer for web, iOS, and database systems.</h3>
+      <p class="reveal">A college student (Class of 2026) and developer working on multiple live production projects. Focused on building full-stack products and live APIs while constantly learning new skills in code and life.</p>
       <div class="hero-stack reveal">
         <span><i class="fas fa-code"></i> React</span>
         <span><i class="fab fa-apple"></i> SwiftUI</span>
@@ -47,7 +52,8 @@
         <span><i class="fas fa-bolt"></i> Firebase</span>
       </div>
       <div class="hero-actions reveal">
-        <a href="projects.html" class="btn-premium">View Projects <i class="fas fa-arrow-right"></i></a>
+        <a href="#projects" class="btn-premium">View Projects <i class="fas fa-arrow-right"></i></a>
+        <a href="resume.html" target="_blank" class="btn-premium" style="background: linear-gradient(135deg, var(--brand-2), var(--brand-3)); border: none;"><i class="far fa-file-pdf"></i> View Resume</a>
         <a href="mailto:sanjeevamoorthy35@gmail.com" class="btn-download"><i class="fas fa-envelope"></i> Contact Me</a>
       </div>
     </div>
@@ -67,7 +73,7 @@
     <section id="stats">
       <div class="stats-grid">
         <div class="stat-card reveal-scale stagger-1">
-          <div class="stat-number" data-target="8" data-suffix="+">0</div>
+          <div class="stat-number" data-target="10" data-suffix="+">0</div>
           <div class="stat-label">Projects Built</div>
         </div>
         <div class="stat-card reveal-scale stagger-2">
@@ -174,26 +180,438 @@
       </div>
     </section>
 
-    <section id="links">
-      <div class="bento-grid">
-        <a href="projects.html" class="bento-card reveal" style="text-decoration: none;">
-          <h4>Featured Projects</h4>
-          <p>OmniFlow, WishyFi, OnceOnThisDay, Apexon API Sentinel, AI tools, and database-backed products.</p>
-        </a>
-        <a href="skills.html" class="bento-card reveal" style="text-decoration: none;">
-          <h4>Technical Skills</h4>
-          <p>Languages, frameworks, tools, and development strengths.</p>
-        </a>
-        <a href="journey.html" class="bento-card reveal" style="text-decoration: none;">
-          <h4>My Journey</h4>
-          <p>The learning path behind the work and the next direction.</p>
-        </a>
-        <a href="mentors.html" class="bento-card reveal" style="text-decoration: none;">
-          <h4>Mentors</h4>
-          <p>The people and guidance that shaped the growth.</p>
-        </a>
+    <section id="projects" class="section-divider reveal" style="padding-top: 80px; margin-top: 40px;">
+      <h2 class="section-title">Projects Explorer</h2>
+      <div class="explorer-window">
+        <!-- Title Bar -->
+        <div class="explorer-titlebar">
+          <div class="window-controls">
+            <span class="control-btn close"></span>
+            <span class="control-btn minimize"></span>
+            <span class="control-btn maximize"></span>
+          </div>
+          <div class="window-title">Sanjeev's Projects - File Explorer</div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="explorer-toolbar">
+          <div class="nav-buttons">
+            <button id="navBack" aria-label="Go back"><i class="fas fa-chevron-left"></i></button>
+            <button id="navForward" aria-label="Go forward" disabled><i class="fas fa-chevron-right"></i></button>
+          </div>
+          <div class="address-bar">
+            <i class="fas fa-folder"></i>
+            <span id="currentPath">root / projects</span>
+          </div>
+          <div class="search-bar-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="explorerSearchInput" placeholder="Search files..." aria-label="Search files" />
+            <button id="clearSearchBtn" aria-label="Clear search"><i class="fas fa-times"></i></button>
+          </div>
+        </div>
+
+        <!-- Main Body: Sidebar + Files Area + Preview Pane -->
+        <div class="explorer-body">
+          <!-- Sidebar -->
+          <aside class="explorer-sidebar">
+            <div class="sidebar-section">
+              <div class="sidebar-section-title">Categories</div>
+              <button class="sidebar-item active" data-folder="all">
+                <i class="far fa-folder-open"></i>
+                <span>All Projects</span>
+              </button>
+              <button class="sidebar-item" data-folder="web">
+                <i class="far fa-folder"></i>
+                <span>Web Apps</span>
+              </button>
+              <button class="sidebar-item" data-folder="dev-tools">
+                <i class="far fa-folder"></i>
+                <span>Dev Tools</span>
+              </button>
+              <button class="sidebar-item" data-folder="backend">
+                <i class="far fa-folder"></i>
+                <span>Backend</span>
+              </button>
+              <button class="sidebar-item" data-folder="ai-security">
+                <i class="far fa-folder"></i>
+                <span>AI & Security</span>
+              </button>
+            </div>
+          </aside>
+
+          <!-- Files Area -->
+          <div class="explorer-files-area" id="explorerFilesArea">
+            <div class="file-icon-item" data-category="web" data-project-id="omniflow">
+              <div class="file-icon"><i class="fas fa-file-code"></i></div>
+              <span class="file-name">OmniFlow.lnk</span>
+            </div>
+
+            <div class="file-icon-item" data-category="web" data-project-id="onceonthisday">
+              <div class="file-icon"><i class="fas fa-file-audio"></i></div>
+              <span class="file-name">OnceOnThisDay.lnk</span>
+            </div>
+
+            <div class="file-icon-item" data-category="web" data-project-id="wishyfi">
+              <div class="file-icon"><i class="fas fa-file-image"></i></div>
+              <span class="file-name">WishyFi.lnk</span>
+            </div>
+
+            <div class="file-icon-item" data-category="dev-tools" data-project-id="apexon">
+              <div class="file-icon"><i class="fas fa-cog"></i></div>
+              <span class="file-name">ApexonSentinel.lnk</span>
+            </div>
+
+            <div class="file-icon-item" data-category="dev-tools" data-project-id="github">
+              <div class="file-icon"><i class="fab fa-github-alt"></i></div>
+              <span class="file-name">GitHubRepos.lnk</span>
+            </div>
+
+            <div class="file-icon-item" data-category="backend" data-project-id="cinema">
+              <div class="file-icon"><i class="fas fa-database"></i></div>
+              <span class="file-name">CinemaSystem.lnk</span>
+            </div>
+
+            <div class="file-icon-item" data-category="ai-security" data-project-id="leetcode">
+              <div class="file-icon"><i class="fas fa-brain"></i></div>
+              <span class="file-name">LeetCodeAssistant.lnk</span>
+            </div>
+
+            <div class="file-icon-item" data-category="backend" data-project-id="selvagam-parent">
+              <div class="file-icon"><i class="fas fa-users-cog"></i></div>
+              <span class="file-name">SelvagamParent.lnk</span>
+            </div>
+
+            <div class="file-icon-item" data-category="backend" data-project-id="selvagam-driver">
+              <div class="file-icon"><i class="fas fa-bus"></i></div>
+              <span class="file-name">SelvagamDriver.lnk</span>
+            </div>
+          </div>
+
+          <!-- Preview Pane -->
+          <aside class="explorer-preview" id="explorerPreviewPane">
+            <div class="preview-placeholder">
+              <i class="far fa-file-alt"></i>
+              <p>Select a project shortcut to inspect details.</p>
+            </div>
+          </aside>
+        </div>
       </div>
     </section>
+
+    <section id="skills" class="section-divider reveal" style="padding-top: 80px; margin-top: 40px;">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="bento-grid">
+        <div class="bento-card card-large reveal">
+          <h4>Programming Languages</h4>
+          <p style="margin-bottom: 18px;">Languages I use for application logic, backend systems, database modeling, and script development.</p>
+          <div class="skills-container">
+            <div class="skill-pill"><i class="fab fa-python" style="color: #3776ab;"></i> Python</div>
+            <div class="skill-pill"><i class="fab fa-java" style="color: #007396;"></i> Java</div>
+            <div class="skill-pill"><i class="fab fa-swift" style="color: #f05138;"></i> Swift</div>
+            <div class="skill-pill"><i class="fas fa-database" style="color: #4479a1;"></i> SQL</div>
+            <div class="skill-pill"><i class="fab fa-js" style="color: #d9a400;"></i> JavaScript</div>
+            <div class="skill-pill"><i class="fab fa-html5" style="color: #e34c26;"></i> HTML</div>
+            <div class="skill-pill"><i class="fab fa-css3-alt" style="color: #264de4;"></i> CSS</div>
+            <div class="skill-pill"><i class="fab fa-rust" style="color: #b7410e;"></i> Rust</div>
+          </div>
+        </div>
+
+        <div class="bento-card reveal stagger-1">
+          <h4>Frontend Engineering</h4>
+          <p>Responsive interface design, CSS layouts, interactive states, components architecture, and clean user experience polish.</p>
+        </div>
+
+        <div class="bento-card reveal stagger-2">
+          <h4>Backend Infrastructure</h4>
+          <p>Database modeling, routing routines, real-time sync systems, API development, and secure authentication flows.</p>
+        </div>
+
+        <div class="bento-card card-wide reveal stagger-3">
+          <h4>Frameworks & Tools</h4>
+          <div class="skills-container">
+            <div class="skill-pill">React</div>
+            <div class="skill-pill">Node.js</div>
+            <div class="skill-pill">Express</div>
+            <div class="skill-pill">SwiftUI</div>
+            <div class="skill-pill">Firebase</div>
+            <div class="skill-pill">PostgreSQL</div>
+            <div class="skill-pill">Git & GitHub</div>
+            <div class="skill-pill">VS Code API</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-grid" style="margin-top: 52px;">
+        <div class="stat-card reveal-scale">
+          <div class="project-icon" style="margin: 0 auto 16px;"><i class="fas fa-sitemap"></i></div>
+          <h4>Architecture</h4>
+          <p>Dividing modules into clear logic layers and clean API pipelines.</p>
+        </div>
+        <div class="stat-card reveal-scale stagger-1">
+          <div class="project-icon" style="margin: 0 auto 16px;"><i class="fas fa-database"></i></div>
+          <h4>Data Design</h4>
+          <p>Designing database structures that match real product needs.</p>
+        </div>
+        <div class="stat-card reveal-scale stagger-2">
+          <div class="project-icon" style="margin: 0 auto 16px;"><i class="fas fa-wand-magic-sparkles"></i></div>
+          <h4>UI Polish</h4>
+          <p>Improving visual balance, micro-animations, and fluid design aesthetics.</p>
+        </div>
+        <div class="stat-card reveal-scale stagger-3">
+          <div class="project-icon" style="margin: 0 auto 16px;"><i class="fas fa-arrow-trend-up"></i></div>
+          <h4>Learning Speed</h4>
+          <p>Exploring and shipping builds while maintaining focus on coding habits.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="mentors" class="section-divider reveal" style="padding-top: 80px; margin-top: 40px;">
+      <h2 class="section-title">My Mentors</h2>
+      <div class="mentors-grid">
+        <article class="bento-card mentor-card reveal">
+          <div class="mentor-avatar">
+            <img src="./palani_anna.jpg" alt="Palani Anna" loading="lazy" />
+          </div>
+          <h4>Palani Anna</h4>
+          <p style="color: var(--brand); font-weight: 800; font-size: 0.9rem;">Amazon Manager & iOS Mentor</p>
+          <p>Guidance in Swift development, architecture choices, and building with professional discipline.</p>
+          <a href="https://www.linkedin.com/in/palani-vairavan" target="_blank" rel="noreferrer" class="btn-premium">Connect <i class="fab fa-linkedin"></i></a>
+        </article>
+
+        <article class="bento-card mentor-card reveal stagger-1">
+          <div class="mentor-avatar">
+            <img src="./meenakshi_anna.jpg" alt="Meenakshi Anna" loading="lazy" />
+          </div>
+          <h4>Meenakshi Anna</h4>
+          <p style="color: var(--brand); font-weight: 800; font-size: 0.9rem;">Intel Developer & Backend Guide</p>
+          <p>Support in backend thinking, database development, and understanding robust system design.</p>
+          <a href="https://www.linkedin.com/in/meenakshi-sundaram" target="_blank" rel="noreferrer" class="btn-premium">Connect <i class="fab fa-linkedin"></i></a>
+        </article>
+
+        <article class="bento-card mentor-card reveal stagger-2">
+          <div class="mentor-avatar">
+            <img src="./siva_anna.jpg" alt="Siva Anna" loading="lazy" />
+          </div>
+          <h4>Siva Anna</h4>
+          <p style="color: var(--brand); font-weight: 800; font-size: 0.9rem;">Life Mentor & Best Friend</p>
+          <p>Personal guidance on focus, consistency, decision making, and long-term learning mindset.</p>
+          <a href="https://www.linkedin.com/in/siva-kumar-370132138" target="_blank" rel="noreferrer" class="btn-premium">Connect <i class="fab fa-linkedin"></i></a>
+        </article>
+
+        <article class="bento-card mentor-card reveal stagger-3">
+          <div class="mentor-avatar">
+            <img src="./mani_anna.jpg" alt="Mani Anna" loading="lazy" />
+          </div>
+          <h4>Mani Anna</h4>
+          <p style="color: var(--brand); font-weight: 800; font-size: 0.9rem;">Learning Guide & Big Brother</p>
+          <p>Hands-on support in practical project implementation and everyday development confidence.</p>
+          <a href="https://www.linkedin.com/in/mani-rr-b93397201" target="_blank" rel="noreferrer" class="btn-premium">Connect <i class="fab fa-linkedin"></i></a>
+        </article>
+      </div>
+
+      <div class="testimonial-card reveal" style="margin-top: 48px;">
+        <blockquote>Good mentorship does more than teach syntax. It builds confidence, taste, patience, and the ability to keep improving after every project.</blockquote>
+        <div class="testimonial-author">Personal Gratitude</div>
+        <div class="testimonial-role">Thank you for the guidance</div>
+      </div>
+    </section>
+
+    <section id="journey" class="section-divider reveal" style="padding-top: 80px; margin-top: 40px; margin-bottom: 60px;">
+      <h2 class="section-title">My Journey</h2>
+      <div class="timeline">
+        <div class="timeline-item left reveal">
+          <div class="timeline-content">
+            <h4>2022</h4>
+            <h5><i class="fas fa-graduation-cap"></i> Academic Foundation</h5>
+            <p>Built a stronger base in mathematics, logic, and disciplined study at Anchetty Higher Secondary School.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right reveal">
+          <div class="timeline-content">
+            <h4>2024</h4>
+            <h5><i class="fas fa-code"></i> Programming Foundations</h5>
+            <p>Started with programming fundamentals, problem solving, data structures, and core development habits.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left reveal">
+          <div class="timeline-content">
+            <h4>Mid 2024</h4>
+            <h5><i class="fas fa-globe"></i> Web Development</h5>
+            <p>Moved into HTML, CSS, JavaScript, responsive layouts, and practical frontend projects.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right reveal">
+          <div class="timeline-content">
+            <h4>Late 2024</h4>
+            <h5><i class="fab fa-apple"></i> iOS Direction</h5>
+            <p>Explored Swift and SwiftUI, focusing on clean interface patterns and mobile product thinking.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left reveal">
+          <div class="timeline-content">
+            <h4>2025</h4>
+            <h5><i class="fas fa-database"></i> Product Systems</h5>
+            <p>Built database-backed projects, authentication flows, Firebase integrations, and developer tools.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right reveal">
+          <div class="timeline-content">
+            <h4>Now</h4>
+            <h5><i class="fas fa-rocket"></i> Professional Growth</h5>
+            <p>Improving full-stack quality while exploring Rust, AI-assisted workflows, and production-level project structure.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bento-grid" style="margin-top: 52px;">
+        <div class="bento-card reveal">
+          <div class="project-icon"><i class="fas fa-trophy"></i></div>
+          <h4>Milestones</h4>
+          <p>Published extension work, full-stack project builds, database architecture practice, and stronger portfolio presentation.</p>
+        </div>
+        <div class="bento-card reveal stagger-1">
+          <div class="project-icon"><i class="fas fa-seedling"></i></div>
+          <h4>HOPE3 Ecosystem</h4>
+          <p>As a <strong>HOPE3 student</strong>, I grow my developer skills through real-world mentorship, industry partner collaboration, and community-driven project execution.</p>
+          <a href="https://www.hope3.org/" target="_blank" rel="noreferrer" style="color: var(--brand); text-decoration: none; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 4px; margin-top: 10px;">Visit HOPE3 <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i></a>
+        </div>
+        <div class="bento-card reveal stagger-2">
+          <div class="project-icon"><i class="fas fa-compass"></i></div>
+          <h4>Next Direction</h4>
+          <p>More production-grade case studies, cleaner code organization, stronger testing habits, and deeper system design learning.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="hobbies" class="section-divider reveal" style="padding-top: 80px; margin-top: 40px; margin-bottom: 60px;">
+      <h2 class="section-title">Hobbies & Interests</h2>
+      <div class="bento-grid">
+        <!-- Tamil Poetry -->
+        <div class="bento-card card-large reveal" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05));">
+          <div style="font-size: 3rem; margin-bottom: 1.5rem;">📝</div>
+          <h4>தமிழ் கவிதை (Tamil Poetry)</h4>
+          <p style="line-height: 1.8;">Deeply passionate about Tamil literature and expressing thoughts through classical and modern Tamil poetry. Writing serves as a creative outlet for reflection and storytelling.</p>
+          <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.05); border-radius: var(--radius); border-left: 4px solid var(--brand-3); font-style: italic;">
+            "அவள் ஒரு கனவு,<br>அதனால் தான், இன்று வரை விழிக்கவில்லை…"
+          </div>
+        </div>
+
+        <!-- Gaming -->
+        <div class="bento-card reveal stagger-1">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎮</div>
+          <h4>Gaming</h4>
+          <p style="font-size: 0.95rem; color: var(--muted);">Strategy games and puzzle solving to keep the analytical mind sharp.</p>
+        </div>
+
+        <!-- Reading -->
+        <div class="bento-card reveal stagger-2">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📚</div>
+          <h4>Reading</h4>
+          <p style="font-size: 0.95rem; color: var(--muted);">Tech blogs, development journals, and classic literature.</p>
+        </div>
+
+        <!-- Music -->
+        <div class="bento-card card-wide reveal stagger-3">
+          <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+            <div style="font-size: 2.5rem; color: var(--brand);"><i class="fas fa-headphones"></i></div>
+            <div>
+              <h4>Musical Balance</h4>
+              <p style="color: var(--muted); margin-top: 4px;">Lo-fi and instrumental tracks during deep work sessions for maximum focus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hidden Project Details Data -->
+    <div id="projectDetailsData" style="display: none;">
+      <div id="detail-omniflow" 
+           data-title="OmniFlow" 
+           data-icon="fas fa-layer-group"
+           data-img="omniflow.png"
+           data-link="https://omniflow-8665a.web.app/" 
+           data-tags="React,Firebase,AI Mapping,Data Tools"
+           data-desc="Enterprise-style data import platform for uploading, validating, and mapping CSV data into modern database workflows."></div>
+           
+      <div id="detail-onceonthisday" 
+           data-title="OnceOnThisDay" 
+           data-icon="fas fa-birthday-cake"
+           data-img="onceonthisday.png"
+           data-link="https://onceonthisday.web.app/" 
+           data-tags="React,Firebase,Web Audio,CSS Animations"
+           data-desc="Generate beautiful, cinematic, and personalized digital birthday cards with custom animations, background music, and photo uploads."></div>
+
+      <div id="detail-wishyfi" 
+           data-title="WishyFi" 
+           data-icon="fas fa-magic"
+           data-img="wishyfi.png"
+           data-link="https://wishyfi.vercel.app/" 
+           data-tags="React,Vite,Tailwind CSS,CSS Animations"
+           data-desc="Create beautiful, personalized animated wishes and greetings for special dates and occasions. Developed by me; project idea owned by Nachiyappan sir."></div>
+
+      <div id="detail-apexon" 
+           data-title="Apexon API Sentinel" 
+           data-icon="fas fa-terminal"
+           data-img=""
+           data-link="https://open-vsx.org/extension/sanjeevan43/apexon" 
+           data-tags="TypeScript,VS Code API,Developer Tool"
+           data-desc="VS Code extension for API discovery and testing workflows, built to reduce setup time and make validation faster."></div>
+
+      <div id="detail-github" 
+           data-title="GitHub Repository" 
+           data-icon="fab fa-github"
+           data-img=""
+           data-link="https://github.com/sanjeevan43" 
+           data-tags="Python,Java,SQL"
+           data-desc="A growing collection of experiments and projects that show learning range across languages, tools, and product ideas."></div>
+
+      <div id="detail-cinema" 
+           data-title="Cinema Management System" 
+           data-icon="fas fa-ticket"
+           data-img=""
+           data-link="https://github.com/sanjeevan43/MovieBookingSystem" 
+           data-tags="SQL,Backend,Database Design"
+           data-desc="Movie booking system with database architecture, user flows, and seat-tracking logic for a practical booking experience."></div>
+
+      <div id="detail-leetcode" 
+           data-title="AI LeetCode Assistant" 
+           data-icon="fas fa-brain"
+           data-img=""
+           data-link="https://leet-code-ai-solver.vercel.app/" 
+           data-tags="AI,JavaScript,Web App"
+           data-desc="Coding assistant concept for algorithm practice, solution guidance, and AI-supported explanation workflows."></div>
+
+      <div id="detail-safeguard" 
+           data-title="SafeGuard Platform" 
+           data-icon="fas fa-shield-halved"
+           data-img=""
+           data-link="https://safe-guard-neon.vercel.app/" 
+           data-tags="React,Node.js,Security"
+           data-desc="Cybersecurity platform concept for monitoring, safety flows, and real-time threat awareness features."></div>
+
+      <div id="detail-selvagam-parent" 
+           data-title="Selvagam Parent App" 
+           data-icon="fas fa-users-cog"
+           data-img=""
+           data-svg='&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 130" width="100%" height="100%"&gt;&lt;defs&gt;&lt;linearGradient id="parentGrad" x1="0%" y1="0%" x2="100%" y2="100%"&gt;&lt;stop offset="0%" stop-color="#0d9488"/&gt;&lt;stop offset="100%" stop-color="#0f766e"/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;rect width="100%" height="100%" fill="url(#parentGrad)"/&gt;&lt;g transform="translate(180, 25)" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;path d="M12 28a6 6 0 1 0 0-12 6 6 0 0 0 0 12z M28 28a6 6 0 1 0 0-12 6 6 0 0 0 0 12z M20 16a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/&gt;&lt;path d="M4 48c0-8.8 7.2-16 16-16s16 7.2 16 16"/&gt;&lt;path d="M28 38.8c3.2 1.3 5.7 3.8 7 7.2 M5 46c1.3-3.4 3.8-5.9 7-7.2" stroke-dasharray="2,2"/&gt;&lt;/g&gt;&lt;/svg&gt;'
+           data-link="https://play.google.com/store/apps/details?id=com.selvagam.parent&pcampaignid=web_share" 
+           data-tags="Python,Firebase,SQL,Backend"
+           data-desc="Mobile portal for parents to monitor, manage, and coordinate school transportation services. Engineered the complete backend architecture, server APIs, and database design."></div>
+
+      <div id="detail-selvagam-driver" 
+           data-title="Selvagam Driver App" 
+           data-icon="fas fa-bus"
+           data-img=""
+           data-svg='&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 130" width="100%" height="100%"&gt;&lt;defs&gt;&lt;linearGradient id="driverGrad" x1="0%" y1="0%" x2="100%" y2="100%"&gt;&lt;stop offset="0%" stop-color="#059669"/&gt;&lt;stop offset="100%" stop-color="#1d4ed8"/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;rect width="100%" height="100%" fill="url(#driverGrad)"/&gt;&lt;g transform="translate(180, 20)" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;circle cx="20" cy="45" r="28"/&gt;&lt;circle cx="20" cy="45" r="8" fill="#ffffff"/&gt;&lt;line x1="20" y1="17" x2="20" y2="37"/&gt;&lt;line x1="20" y1="53" x2="20" y2="73"/&gt;&lt;line x1="-8" y1="45" x2="12" y2="45"/&gt;&lt;line x1="28" y1="45" x2="48" y2="45"/&gt;&lt;path d="M 20 17 A 28 28 0 0 1 48 45" stroke-width="8" stroke="#34d399"/&gt;&lt;path d="M 20 -4 C 10 -4 4 2 4 12 C 4 24 20 36 20 36 C 20 36 36 24 36 12 C 36 2 30 -4 20 -4 Z" fill="#ef4444" stroke="#ffffff" stroke-width="2" transform="translate(5, 5) scale(0.6)"/&gt;&lt;/g&gt;&lt;/svg&gt;'
+           data-link="https://play.google.com/store/apps/details?id=com.hope3services.selvagamdriver&pcampaignid=web_share" 
+           data-tags="Python,Firebase,SQL,Realtime DB"
+           data-desc="Driver-side tracking application enabling real-time routing, transit coordinates, and driver metrics. Engineered the complete backend logic, database sync routines, and transit APIs."></div>
+    </div>
   </main>
 
   <footer>
@@ -216,9 +634,9 @@
       <div class="footer-section">
         <h4>Explore</h4>
         <ul class="footer-links">
-          <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
-          <li><a href="skills.html"><i class="fas fa-brain"></i> Skills</a></li>
-          <li><a href="journey.html"><i class="fas fa-route"></i> Journey</a></li>
+          <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+          <li><a href="#skills"><i class="fas fa-brain"></i> Skills</a></li>
+          <li><a href="#journey"><i class="fas fa-route"></i> Journey</a></li>
         </ul>
       </div>
     </div>

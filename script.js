@@ -10,7 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
   initPageTransitions();
   initStatsCounter();
   initTestimonials();
+  initProjectSearcher();
+  init3DTilt();
 });
+
 
 function initPreloader() {
   const preloader = document.getElementById("preloader");
@@ -159,13 +162,48 @@ function validateInput(input) {
 
 function initActiveNav() {
   const links = [...document.querySelectorAll(".nav-links a")];
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  const sections = document.querySelectorAll("section[id], header[id]");
 
+  // Smooth scroll
   links.forEach((link) => {
-    const href = link.getAttribute("href") || "";
-    const hrefPage = href.split("#")[0] || "index.html";
-    if (hrefPage === currentPage) link.classList.add("active");
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      if (href.startsWith("#")) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    });
   });
+
+  // Scroll Spy using IntersectionObserver
+  if ("IntersectionObserver" in window) {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-25% 0px -55% 0px",
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute("id");
+          links.forEach((link) => {
+            const href = link.getAttribute("href");
+            if (href === `#${id}`) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((section) => observer.observe(section));
+  }
 }
 
 function initPageTransitions() {
@@ -246,3 +284,241 @@ function initTestimonials() {
   show(0);
   setInterval(() => show((index + 1) % slides.length), 5200);
 }
+
+function initProjectSearcher() {
+  const searchInput = document.getElementById("explorerSearchInput");
+  const clearBtn = document.getElementById("clearSearchBtn");
+  const sidebarItems = document.querySelectorAll(".sidebar-item");
+  const fileItems = document.querySelectorAll(".file-icon-item");
+  const previewPane = document.getElementById("explorerPreviewPane");
+  const currentPathText = document.getElementById("currentPath");
+  const navBackBtn = document.getElementById("navBack");
+
+  if (!searchInput || !fileItems.length || !previewPane) return;
+
+  let currentQuery = "";
+  let currentFolder = "all";
+  let selectedFileId = null;
+
+  // Folder paths map for address bar
+  const folderPaths = {
+    all: "root / projects",
+    web: "root / projects / web_apps",
+    "dev-tools": "root / projects / dev_tools",
+    backend: "root / projects / backend",
+    "ai-security": "root / projects / ai_and_security"
+  };
+
+  // Render project details into preview pane
+  const renderPreview = (projectId) => {
+    if (!projectId) {
+      previewPane.innerHTML = `
+        <div class="preview-placeholder">
+          <i class="far fa-file-alt"></i>
+          <p>Select a project shortcut to inspect details.</p>
+        </div>
+      `;
+      return;
+    }
+
+    const detailElement = document.getElementById(`detail-${projectId}`);
+    if (!detailElement) return;
+
+    const title = detailElement.getAttribute("data-title") || "";
+    const iconClass = detailElement.getAttribute("data-icon") || "far fa-file-alt";
+    const imgUrl = detailElement.getAttribute("data-img") || "";
+    const svgCode = detailElement.getAttribute("data-svg") || "";
+    const launchUrl = detailElement.getAttribute("data-link") || "#";
+    const desc = detailElement.getAttribute("data-desc") || "";
+    const tagsString = detailElement.getAttribute("data-tags") || "";
+    const tags = tagsString ? tagsString.split(",") : [];
+
+    let imageHtml = `<div class="preview-img-box no-img"><i class="${iconClass}"></i></div>`;
+    if (imgUrl) {
+      imageHtml = `
+        <div class="preview-img-box">
+          <img src="${imgUrl}" alt="${title} Preview Image" />
+        </div>
+      `;
+    } else if (svgCode) {
+      imageHtml = `
+        <div class="preview-img-box">
+          ${svgCode}
+        </div>
+      `;
+    }
+
+    const tagsHtml = tags.map(tag => `<span class="tech-tag">${tag}</span>`).join("");
+
+    previewPane.innerHTML = `
+      <div class="preview-content">
+        ${imageHtml}
+        <div class="preview-header">
+          <div class="preview-icon-box">
+            <i class="${iconClass}"></i>
+          </div>
+          <div class="preview-title-box">
+            <h4>${title}</h4>
+          </div>
+        </div>
+        <p class="preview-desc">${desc}</p>
+        <div>
+          <div class="preview-tags-label">Technologies</div>
+          <div class="preview-tags">
+            ${tagsHtml}
+          </div>
+        </div>
+        <a href="${launchUrl}" target="_blank" rel="noreferrer" class="btn-premium" style="margin-top: 10px; width: 100%; text-align: center; justify-content: center;">
+          Launch <i class="fas fa-arrow-up-right-from-square" style="margin-left: 6px;"></i>
+        </a>
+      </div>
+    `;
+  };
+
+  const filterFiles = () => {
+    const query = currentQuery.toLowerCase().trim();
+    let visibleCount = 0;
+
+    fileItems.forEach((item) => {
+      const category = item.getAttribute("data-category") || "";
+      const projectId = item.getAttribute("data-project-id") || "";
+      
+      const detailElement = document.getElementById(`detail-${projectId}`);
+      let searchData = "";
+      if (detailElement) {
+        const title = detailElement.getAttribute("data-title") || "";
+        const desc = detailElement.getAttribute("data-desc") || "";
+        const tags = detailElement.getAttribute("data-tags") || "";
+        searchData = `${title} ${desc} ${tags}`.toLowerCase();
+      }
+
+      const matchesSearch = !query || searchData.includes(query);
+      const matchesFolder = currentFolder === "all" || category === currentFolder;
+
+      if (matchesSearch && matchesFolder) {
+        item.classList.remove("hidden");
+        visibleCount++;
+      } else {
+        item.classList.add("hidden");
+        // Deselect if hidden
+        if (item.classList.contains("selected")) {
+          item.classList.remove("selected");
+          selectedFileId = null;
+          renderPreview(null);
+        }
+      }
+    });
+
+    // Update back button state
+    if (currentFolder !== "all" || currentQuery) {
+      navBackBtn.removeAttribute("disabled");
+    } else {
+      navBackBtn.setAttribute("disabled", "true");
+    }
+  };
+
+  // Search input events
+  searchInput.addEventListener("input", (e) => {
+    currentQuery = e.target.value;
+    clearBtn.style.display = currentQuery ? "block" : "none";
+    filterFiles();
+  });
+
+  clearBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    currentQuery = "";
+    clearBtn.style.display = "none";
+    searchInput.focus();
+    filterFiles();
+  });
+
+  // Sidebar item events
+  sidebarItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      sidebarItems.forEach((t) => {
+        t.classList.remove("active");
+        const icon = t.querySelector("i");
+        if (icon) {
+          icon.className = "far fa-folder";
+        }
+      });
+
+      item.classList.add("active");
+      const activeIcon = item.querySelector("i");
+      if (activeIcon) {
+        activeIcon.className = "far fa-folder-open";
+      }
+
+      currentFolder = item.getAttribute("data-folder") || "all";
+      currentPathText.textContent = folderPaths[currentFolder] || folderPaths.all;
+      filterFiles();
+    });
+  });
+
+  // File click events
+  fileItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      fileItems.forEach(f => f.classList.remove("selected"));
+      
+      const projectId = item.getAttribute("data-project-id");
+      if (selectedFileId === projectId) {
+        // Deselect if clicked again
+        selectedFileId = null;
+        renderPreview(null);
+      } else {
+        item.classList.add("selected");
+        selectedFileId = projectId;
+        renderPreview(projectId);
+      }
+    });
+  });
+
+  // Back button event
+  navBackBtn.addEventListener("click", () => {
+    if (currentQuery) {
+      searchInput.value = "";
+      currentQuery = "";
+      clearBtn.style.display = "none";
+    }
+
+    if (currentFolder !== "all") {
+      // Find and click the 'all' sidebar item
+      const allItem = document.querySelector('.sidebar-item[data-folder="all"]');
+      if (allItem) allItem.click();
+    } else {
+      filterFiles();
+    }
+  });
+}
+
+function init3DTilt() {
+  const cards = document.querySelectorAll(".bento-card, .explorer-window, .stat-card, .mentor-card, .timeline-content");
+  
+  cards.forEach(card => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const xc = rect.width / 2;
+      const yc = rect.height / 2;
+      
+      const angleX = (yc - y) / 22;
+      const angleY = (x - xc) / 22;
+      
+      card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-4px)`;
+      
+      const pctX = (x / rect.width) * 100;
+      const pctY = (y / rect.height) * 100;
+      card.style.setProperty("--x", `${pctX}%`);
+      card.style.setProperty("--y", `${pctY}%`);
+    });
+    
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+      card.style.setProperty("--x", "50%");
+      card.style.setProperty("--y", "50%");
+    });
+  });
+}
+
