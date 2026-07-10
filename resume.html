@@ -229,19 +229,133 @@
       background-color: var(--secondary);
     }
 
-    @media (max-width: 768px) {
-      body {
-        padding: 10px;
+    /* ============================================
+       Resume Mobile Responsive Styles
+       ============================================ */
+    @media (max-width: 860px) {
+      .resume-container {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
       }
+
       .resume-body {
         grid-template-columns: 1fr;
       }
+
       .sidebar {
         border-right: none;
         border-bottom: 1px solid var(--border);
+        padding: 18px 20px;
       }
+
+      .main-content {
+        padding: 18px 20px;
+      }
+
       header {
-        padding: 24px;
+        padding: 18px 20px;
+      }
+
+      .header-content h1 {
+        font-size: 1.6rem;
+      }
+
+      .header-content h2 {
+        font-size: 0.95rem;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+
+      .print-btn-container {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 8px 6px;
+      }
+
+      .resume-container {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+      }
+
+      header {
+        padding: 16px 16px;
+      }
+
+      .header-content h1 {
+        font-size: 1.35rem;
+      }
+
+      .header-content h2 {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .contact-item {
+        font-size: 0.78rem;
+      }
+
+      .sidebar {
+        padding: 14px 16px;
+      }
+
+      .main-content {
+        padding: 14px 16px;
+      }
+
+      .skills-container {
+        gap: 5px;
+      }
+
+      .skill-pill {
+        padding: 5px 8px;
+        font-size: 0.72rem;
+      }
+
+      .section-title {
+        font-size: 0.72rem;
+        margin-bottom: 8px;
+        padding-bottom: 4px;
+      }
+
+      .project-title {
+        font-size: 0.88rem;
+      }
+
+      .project-tech {
+        font-size: 0.68rem;
+      }
+
+      .project-desc {
+        font-size: 0.78rem;
+      }
+
+      .bullet-list {
+        font-size: 0.75rem;
+      }
+
+      .btn-print {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.85rem;
+        padding: 10px 14px;
+      }
+
+      .print-btn-container {
+        justify-content: center;
       }
     }
 
@@ -321,25 +435,40 @@
         <div class="sidebar-section">
           <h3 class="section-title">Education</h3>
           <div class="education-item" style="margin-bottom: 10px;">
+            <h4>HOPE3 Ecosystem</h4>
+            <p>Student Member & Developer (2026)</p>
+          </div>
+          <div class="education-item" style="margin-bottom: 10px;">
             <h4>Anchetty Higher Secondary School</h4>
             <p>Academic Focus in Math & Sciences</p>
           </div>
           <div class="education-item">
-            <h4>HOPE3 Ecosystem</h4>
-            <p>Student Member & Developer (2026)</p>
+            <h4>Nachiappa Swamigal Arts & Science College</h4>
+            <p style="color: var(--secondary); font-weight: 700; font-size: 0.82rem; margin: 2px 0 3px;">B.Sc Computer Science</p>
+            <p>Koviloor, Tamil Nadu · <span style="color: var(--secondary); font-weight: 700;">Enrolled · 2026</span></p>
           </div>
         </div>
 
         <div class="sidebar-section">
-          <h3 class="section-title">Interests & Langs</h3>
-          <p style="font-size: 0.82rem; margin: 0 0 3px 0; font-weight: 600; color: var(--dark);">Tamil Poetry (தமிழ் கவிதை)</p>
-          <p style="font-size: 0.78rem; color: var(--text-light); margin: 0 0 8px 0;">Creative writing & classical Tamil literature.</p>
-          
-          <p style="font-size: 0.82rem; margin: 0 0 3px 0; font-weight: 600; color: var(--dark);">Strategy Gaming</p>
-          <p style="font-size: 0.78rem; color: var(--text-light); margin: 0 0 8px 0;">Analytical thinking & puzzle solving.</p>
-
-          <p style="font-size: 0.82rem; margin: 0 0 3px 0; font-weight: 600; color: var(--dark);">Languages</p>
-          <p style="font-size: 0.78rem; color: var(--text-light); margin: 0;">Tamil (Native), English (Professional).</p>
+          <h3 class="section-title">Strengths</h3>
+          <div style="display: flex; flex-direction: column; gap: 7px;">
+            <div style="display: flex; align-items: flex-start; gap: 8px;">
+              <span style="color: var(--secondary); font-size: 0.9rem; margin-top: 1px;">✦</span>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--text);">Fast learner — quickly picks up new tools, frameworks, and concepts in real work environments.</p>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 8px;">
+              <span style="color: var(--secondary); font-size: 0.9rem; margin-top: 1px;">✦</span>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--text);">Easily adapts to team pace, project roles, and changing technical requirements.</p>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 8px;">
+              <span style="color: var(--secondary); font-size: 0.9rem; margin-top: 1px;">✦</span>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--text);">Reliable team worker — collaborative, consistent, and comfortable in professional working positions.</p>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 8px;">
+              <span style="color: var(--secondary); font-size: 0.9rem; margin-top: 1px;">✦</span>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--text);">Languages: Tamil (Native), English (Professional).</p>
+            </div>
+          </div>
         </div>
       </aside>
 
@@ -412,13 +541,28 @@
           </div>
 
           <div class="project-item" style="margin-top: 20px; border-top: 1px dashed var(--border); padding-top: 12px; page-break-inside: avoid; break-inside: avoid;">
-            <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--dark); margin: 0 0 6px 0;">Other Projects</h4>
-            <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 0.8rem; font-weight: 600; color: var(--text-light); line-height: 1.4;">
-              <span>OnceOnThisDay (React/Firebase)</span> • 
-              <span>WishyFi (React/Vite)</span> • 
-              <span>LeetCode Assistant (JS/Web App)</span> • 
-              <span>SafeGuard Platform (React/Node)</span> • 
-              <span>GitHub Repositories</span>
+            <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--dark); margin: 0 0 10px 0;">Other Projects</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px;">
+              <div style="display: flex; align-items: center; gap: 7px; font-size: 0.8rem; color: var(--text);">
+                <span style="width: 6px; height: 6px; background: var(--secondary); border-radius: 50%; flex-shrink: 0;"></span>
+                <span><strong>OnceOnThisDay</strong> <span style="color: var(--text-light);">— React / Firebase</span></span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 7px; font-size: 0.8rem; color: var(--text);">
+                <span style="width: 6px; height: 6px; background: var(--secondary); border-radius: 50%; flex-shrink: 0;"></span>
+                <span><strong>WishyFi</strong> <span style="color: var(--text-light);">— React / Vite</span></span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 7px; font-size: 0.8rem; color: var(--text);">
+                <span style="width: 6px; height: 6px; background: var(--secondary); border-radius: 50%; flex-shrink: 0;"></span>
+                <span><strong>LeetCode Assistant</strong> <span style="color: var(--text-light);">— JS / Web App</span></span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 7px; font-size: 0.8rem; color: var(--text);">
+                <span style="width: 6px; height: 6px; background: var(--secondary); border-radius: 50%; flex-shrink: 0;"></span>
+                <span><strong>SafeGuard Platform</strong> <span style="color: var(--text-light);">— React / Node</span></span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 7px; font-size: 0.8rem; color: var(--text);">
+                <span style="width: 6px; height: 6px; background: var(--secondary); border-radius: 50%; flex-shrink: 0;"></span>
+                <span><strong>GitHub Repositories</strong> <span style="color: var(--text-light);">— github.com/sanjeevan43</span></span>
+              </div>
             </div>
           </div>
         </section>

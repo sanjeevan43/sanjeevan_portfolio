@@ -414,7 +414,8 @@ header p {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  align-items: center;
+  gap: 10px;
   margin-top: 30px;
 }
 
@@ -704,32 +705,65 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  min-height: 44px;
-  padding: 12px 16px;
-  border: 1px solid transparent;
-  border-radius: var(--radius);
-  color: #fff;
-  background: var(--ink);
+  gap: 8px;
+  min-height: 46px;
+  padding: 11px 22px;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 800;
+  letter-spacing: 0.01em;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  white-space: nowrap;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
 }
 
-.btn-premium:hover,
-.btn-download:hover {
-  transform: translateY(-2px);
-  background: var(--brand);
-  box-shadow: 0 14px 30px rgba(15, 118, 110, 0.22);
+/* Primary — View Projects */
+.btn-premium {
+  color: #fff;
+  background: linear-gradient(135deg, var(--brand) 0%, #0a9387 100%);
+  box-shadow: 0 4px 18px rgba(15, 118, 110, 0.28);
 }
 
+.btn-premium:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+  box-shadow: 0 10px 30px rgba(15, 118, 110, 0.35);
+}
+
+/* Ghost — Contact Me */
 .btn-download {
-  margin-top: 18px;
   color: var(--ink);
-  background: transparent;
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
   border-color: var(--line);
+  backdrop-filter: blur(10px);
+  margin-top: 0;
+}
+
+body.dark-mode .btn-download {
+  color: #fff;
+  border-color: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+}
+
+.btn-download:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand);
+  color: var(--brand);
+  box-shadow: 0 8px 24px rgba(15, 118, 110, 0.15);
+  background: color-mix(in srgb, var(--brand) 8%, transparent);
+}
+
+/* Resume button – blue-to-amber gradient */
+.btn-resume {
+  background: linear-gradient(135deg, var(--brand-2) 0%, var(--brand-3) 100%);
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.22);
+}
+
+.btn-resume:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.28);
 }
 
 .github-card,
@@ -1913,3 +1947,279 @@ body.dark-mode .timeline-content::before {
   }
 }
 
+/* ==========================================================================
+   Mobile – 480px and below (standard small phones)
+   ========================================================================== */
+@media (max-width: 480px) {
+  /* Hero */
+  header h1 {
+    font-size: clamp(2.4rem, 11vw, 3.2rem);
+    line-height: 1;
+  }
+
+  header h3 {
+    font-size: 0.95rem;
+  }
+
+  header p {
+    font-size: 0.92rem;
+  }
+
+  .hero-text::before {
+    font-size: 0.65rem;
+    padding: 5px 8px;
+  }
+
+  /* Hero buttons: 2-col grid on mobile */
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .hero-actions .btn-premium:first-child {
+    grid-column: span 1;
+  }
+
+  .hero-actions .btn-resume {
+    grid-column: span 1;
+  }
+
+  .hero-actions .btn-download {
+    grid-column: span 2;
+  }
+
+  /* All grids go single column */
+  .bento-grid,
+  .stats-grid,
+  .projects-grid,
+  .mentors-grid,
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .card-large,
+  .card-wide,
+  .card-tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  /* Section spacing */
+  section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: clamp(1.7rem, 8vw, 2.4rem);
+    margin-bottom: 20px;
+  }
+
+  /* Bento card padding */
+  .bento-card {
+    padding: 20px 18px;
+  }
+
+  /* Profile photo smaller */
+  .profile-photo {
+    width: min(260px, 78vw);
+  }
+
+  /* Floating badges: inline row */
+  .floating-badge {
+    font-size: 0.68rem;
+    padding: 7px 9px;
+    gap: 6px;
+  }
+
+  /* Skills section wrapping */
+  .skills-container {
+    gap: 7px;
+  }
+
+  .skill-pill {
+    padding: 8px 10px;
+    font-size: 0.72rem;
+  }
+
+  /* Github & Status cards */
+  .github-card,
+  .status-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 18px;
+  }
+
+  .github-avatar {
+    width: 68px;
+    height: 68px;
+  }
+
+  /* Footer */
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  footer {
+    padding: 40px 16px 100px;
+  }
+
+  /* Explorer: hide preview panel on very small screens */
+  .explorer-preview {
+    display: none;
+  }
+
+  .explorer-window {
+    height: auto;
+    min-height: 380px;
+  }
+
+  .explorer-files-area {
+    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .file-icon {
+    font-size: 1.8rem;
+  }
+
+  .file-name {
+    font-size: 0.7rem;
+  }
+
+  .search-bar-container {
+    width: 130px;
+  }
+
+  .address-bar {
+    display: none;
+  }
+
+  /* Timeline */
+  .timeline {
+    margin-top: 24px;
+  }
+
+  .timeline-content h4 {
+    font-size: 1.05rem;
+  }
+
+  .timeline-content h5 {
+    font-size: 0.88rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.85rem;
+  }
+
+  /* Mentor cards */
+  .mentor-avatar {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* Back to top */
+  #backToTop {
+    right: 12px;
+    bottom: 82px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ==========================================================================
+   Mobile – 375px and below (very small phones like iPhone SE)
+   ========================================================================== */
+@media (max-width: 375px) {
+  header h1 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  nav a {
+    padding: 8px 6px;
+    font-size: 0.68rem;
+  }
+
+  .hero-stack span {
+    font-size: 0.68rem;
+    padding: 6px 8px;
+    min-height: 30px;
+  }
+
+  .bento-card {
+    padding: 16px 14px;
+  }
+
+  .btn-premium,
+  .btn-download {
+    font-size: 0.82rem;
+    padding: 10px 12px;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .explorer-sidebar .sidebar-item {
+    font-size: 0.72rem;
+    padding: 5px 8px;
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+  }
+}
+
+/* ==========================================================================
+   Tablet – 768px (medium tablets and larger phones landscape)
+   ========================================================================== */
+@media (max-width: 768px) and (min-width: 481px) {
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero-actions .btn-premium,
+  .hero-actions .btn-download {
+    flex: 1 1 140px;
+  }
+
+  .bento-grid,
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-large,
+  .card-wide {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .card-tall {
+    grid-row: span 1;
+  }
+
+  .section-title {
+    font-size: clamp(1.85rem, 5vw, 2.6rem);
+  }
+
+  .explorer-preview {
+    width: 200px;
+  }
+
+  .search-bar-container {
+    width: 160px;
+  }
+}
