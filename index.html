@@ -1,842 +1,478 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <title>Sanjeeva Moorthy</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: { cream: "#efeee9" },
-            fontFamily: {
-              hn: ['"Helvetica Neue ME"', "Helvetica", "Arial", "sans-serif"],
-              sans: ['"Helvetica Neue ME"', "Helvetica", "Arial", "sans-serif"],
-              serif: [
-                '"Helvetica Neue ME"',
-                "Helvetica",
-                "Arial",
-                "sans-serif",
-              ],
-            },
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Sanjeeva Moorthy</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { cream: "#efeee9" },
+          fontFamily: {
+            hn: ['"Helvetica Neue ME"', "Helvetica", "Arial", "sans-serif"],
+            sans: ['"Helvetica Neue ME"', "Helvetica", "Arial", "sans-serif"],
+            serif: [
+              '"Helvetica Neue ME"',
+              "Helvetica",
+              "Arial",
+              "sans-serif",
+            ],
           },
         },
-      };
-    </script>
+      },
+    };
+  </script>
 
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body class="bg-black text-cream font-hn overflow-hidden h-[100dvh] w-full">
-    <div class="relative h-[100dvh] w-full overflow-hidden">
-      <!-- 1. BG Image (default z) -->
-      <div class="absolute inset-0 h-full w-full bg-black anim-fade-in"></div>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-      <!-- 2. Marquee Wrapper (z-10) -->
-      <div
-        class="absolute inset-x-0 top-[16vh] sm:top-[14vh] z-10 overflow-hidden anim-fade-up"
-        style="animation-delay: 500ms"
-      >
-        <div
-          class="marquee font-hn text-[16vh] sm:text-[26vh] leading-none text-cream"
-        >
-          <span class="pr-[6vw]">Sanjeeva &mdash; Moorthy&nbsp;</span>
-          <span class="pr-[6vw]">Sanjeeva &mdash; Moorthy&nbsp;</span>
-        </div>
+<body class="bg-black text-cream font-hn overflow-hidden h-[100dvh] w-full">
+  <div class="relative h-[100dvh] w-full overflow-hidden">
+    <!-- 1. BG Image (default z) -->
+    <div class="absolute inset-0 h-full w-full bg-black anim-fade-in"></div>
+
+    <!-- 2. Marquee Wrapper (z-10) -->
+    <div class="absolute inset-x-0 top-[16vh] sm:top-[14vh] z-10 overflow-hidden anim-fade-up"
+      style="animation-delay: 500ms">
+      <div class="marquee font-hn text-[10vh] sm:text-[18vh] leading-none text-cream">
+        <span class="pr-[6vw]">Sanjeeva &mdash; Moorthy&nbsp;</span>
+        <span class="pr-[6vw]">Sanjeeva &mdash; Moorthy&nbsp;</span>
       </div>
+    </div>
 
-      <!-- 3. Cream Rule (z-10) -->
-      <div
-        class="absolute inset-x-6 sm:inset-x-10 bottom-[5.5rem] sm:bottom-28 z-10 h-0.5 bg-cream anim-line"
-        style="animation-delay: 1200ms"
-      ></div>
+    <!-- 3. Cream Rule (z-10) -->
+    <div class="absolute inset-x-6 sm:inset-x-10 bottom-[5.5rem] sm:bottom-28 z-10 h-0.5 bg-cream anim-line"
+      style="animation-delay: 1200ms"></div>
 
-      <!-- 4. Front Portrait (z-20) seamlessly blended into background -->
-      <div
-        class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none anim-rise-in"
-        style="animation-delay: 300ms"
-      >
-        <img
-          src="profile.jpg"
-          alt="Sanjeeva"
-          class="h-[60vh] w-[80vw] sm:w-[40vw] object-cover mt-[15vh]"
-          style="
+    <!-- 4. Front Portrait (z-20) seamlessly blended into background -->
+    <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none anim-rise-in"
+      style="animation-delay: 300ms">
+      <img src="profile.jpg" alt="Sanjeeva" class="h-[60vh] w-[80vw] md:w-[60vw] lg:w-[40vw] object-cover mt-[15vh]" style="
             -webkit-mask-image: radial-gradient(
               circle,
               black 30%,
               transparent 70%
             );
             mask-image: radial-gradient(circle, black 30%, transparent 70%);
-          "
-        />
-      </div>
-
-      <!-- 5. Header (z-30) -->
-      <header
-        class="absolute inset-x-0 top-0 z-30 flex items-start justify-between px-6 pt-6 sm:px-10 sm:pt-8"
-      >
-        <!-- Brand -->
-        <a
-          href="#"
-          class="font-hn text-lg tracking-wide anim-fade-up"
-          style="animation-delay: 800ms"
-          >Sanjeeva</a
-        >
-
-        <!-- Desktop Header Right -->
-        <div class="hidden sm:flex items-start gap-16 lg:gap-24">
-          <div class="text-sm anim-fade-up" style="animation-delay: 900ms">
-            2026
-          </div>
-
-          <nav class="flex flex-col gap-0.5 text-sm">
-            <a
-              href="#"
-              class="anim-fade-up hover:opacity-60 duration-300"
-              style="animation-delay: 1000ms"
-              >About</a
-            >
-            <a
-              href="#"
-              class="anim-fade-up hover:opacity-60 duration-300"
-              style="animation-delay: 1080ms"
-              >Projects</a
-            >
-            <a
-              href="#"
-              class="anim-fade-up hover:opacity-60 duration-300"
-              style="animation-delay: 1160ms"
-              >Contact</a
-            >
-          </nav>
-
-          <div class="flex flex-col gap-0.5 text-sm">
-            <a
-              href="https://github.com/sanjeevan43"
-              target="_blank"
-              class="anim-fade-up hover:opacity-60 duration-300"
-              style="animation-delay: 1150ms"
-              >GitHub</a
-            >
-            <a
-              href="https://www.linkedin.com/in/sanjeeva-moorthy-m-845917379"
-              target="_blank"
-              class="anim-fade-up hover:opacity-60 duration-300"
-              style="animation-delay: 1230ms"
-              >LinkedIn</a
-            >
-            <a
-              href="https://www.instagram.com/sanjeev_amoorthy_"
-              target="_blank"
-              class="anim-fade-up hover:opacity-60 duration-300"
-              style="animation-delay: 1310ms"
-              >Instagram</a
-            >
-          </div>
-        </div>
-      </header>
-
-      <!-- 6. Hamburger / Close (z-50) (Mobile only) -->
-      <button
-        id="hamburgerBtn"
-        class="absolute right-6 top-6 z-50 h-10 w-10 flex flex-col items-center justify-center sm:hidden anim-fade-up"
-        style="animation-delay: 900ms"
-        aria-label="Toggle menu"
-      >
-        <div class="flex flex-col justify-between h-4 w-6 relative">
-          <span
-            class="bar-top w-full h-[2px] bg-cream absolute top-0 left-0"
-          ></span>
-          <span
-            class="bar-mid w-full h-[2px] bg-cream absolute top-[7px] left-0"
-          ></span>
-          <span
-            class="bar-bot w-full h-[2px] bg-cream absolute bottom-0 left-0"
-          ></span>
-        </div>
-      </button>
-
-      <!-- 7. Footer (z-30 / sm:z-10) -->
-      <footer
-        class="absolute inset-x-0 bottom-0 flex items-end justify-between px-6 pb-5 sm:px-10 sm:pb-8 text-xs sm:text-sm leading-relaxed font-hn z-30 sm:z-10"
-      >
-        <div class="flex flex-col anim-fade-up" style="animation-delay: 1400ms">
-          <span>Full-Stack Developer</span>
-          <span>Computer Science Student</span>
-          <span>AI Enthusiast</span>
-        </div>
-        <div
-          class="flex flex-col text-right anim-fade-up"
-          style="animation-delay: 1550ms"
-        >
-          <span>A portfolio by</span>
-          <span>Sanjeeva Moorthy</span>
-        </div>
-      </footer>
-
-      <!-- 8. Mobile Drawer (z-40) -->
-      <div
-        id="drawerBackdrop"
-        class="drawer-backdrop fixed inset-0 z-40 bg-black/40 backdrop-blur-sm pointer-events-none sm:hidden"
-      ></div>
-      <aside
-        id="drawerPanel"
-        class="drawer-panel fixed right-0 top-0 bottom-0 z-40 w-[80%] max-w-sm bg-[#141414] px-8 py-10 flex flex-col sm:hidden"
-      >
-        <!-- Drawer Close Icon (Lucide X exact SVG) -->
-        <button
-          id="closeBtn"
-          class="absolute right-6 top-6 opacity-0 transition-opacity duration-300"
-          style="transition-delay: 300ms"
-          aria-label="Close menu"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="26"
-            height="26"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="text-cream"
-          >
-            <path d="M18 6 6 18" />
-            <path d="m6 6 12 12" />
-          </svg>
-        </button>
-
-        <div class="flex-1 mt-12 flex flex-col gap-12">
-          <!-- Site Index -->
-          <div class="flex flex-col">
-            <span
-              id="drawerIndexLabel"
-              class="uppercase tracking-[0.2em] text-cream/50 text-xs mb-6 drawer-fade-up"
-              style="transition-delay: 250ms"
-              >Site Index</span
-            >
-            <nav class="flex flex-col gap-4 text-4xl">
-              <a href="#" class="drawer-fade-up" style="transition-delay: 300ms"
-                >About</a
-              >
-              <a href="#" class="drawer-fade-up" style="transition-delay: 380ms"
-                >Projects</a
-              >
-              <a href="#" class="drawer-fade-up" style="transition-delay: 460ms"
-                >Contact</a
-              >
-            </nav>
-          </div>
-
-          <!-- Find Me -->
-          <div class="flex flex-col">
-            <span
-              id="drawerFindLabel"
-              class="uppercase tracking-[0.2em] text-cream/50 text-xs mb-4 drawer-fade-up"
-              style="transition-delay: 500ms"
-              >Find Me</span
-            >
-            <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm">
-              <a
-                href="https://github.com/sanjeevan43"
-                target="_blank"
-                class="drawer-fade-up"
-                style="transition-delay: 550ms"
-                >GitHub</a
-              >
-              <a
-                href="https://www.linkedin.com/in/sanjeeva-moorthy-m-845917379"
-                target="_blank"
-                class="drawer-fade-up"
-                style="transition-delay: 610ms"
-                >LinkedIn</a
-              >
-              <a
-                href="https://www.instagram.com/sanjeev_amoorthy_"
-                target="_blank"
-                class="drawer-fade-up"
-                style="transition-delay: 670ms"
-                >Instagram</a
-              >
-            </div>
-          </div>
-        </div>
-      </aside>
+          " />
     </div>
 
-    <!-- GLOBAL OVERLAY CLOSE BUTTON -->
-    <button
-      id="globalCloseOverlay"
-      class="close-overlay-btn"
-      aria-label="Close page"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="text-cream"
-      >
-        <path d="M18 6 6 18" />
-        <path d="m6 6 12 12" />
-      </svg>
+    <!-- 5. Header (z-30) -->
+    <header class="absolute inset-x-0 top-0 z-30 flex items-start justify-between px-6 pt-6 sm:px-10 sm:pt-8">
+      <!-- Brand -->
+      <a href="#" class="font-hn text-lg tracking-wide anim-fade-up" style="animation-delay: 800ms">Sanjeeva</a>
+
+      <!-- Desktop Header Right -->
+      <div class="hidden sm:flex items-start gap-16 lg:gap-24">
+        <div class="text-sm anim-fade-up" style="animation-delay: 900ms">
+          2026
+        </div>
+
+        <nav class="flex flex-col gap-0.5 text-sm">
+          <a href="#" class="anim-fade-up hover:opacity-60 duration-300" style="animation-delay: 1000ms">About</a>
+          <a href="#" class="anim-fade-up hover:opacity-60 duration-300" style="animation-delay: 1080ms">Projects</a>
+          <a href="#" class="anim-fade-up hover:opacity-60 duration-300" style="animation-delay: 1160ms">Contact</a>
+          <a href="resume.html" target="_blank" class="anim-fade-up hover:opacity-60 duration-300" style="animation-delay: 1240ms">Resume</a>
+        </nav>
+
+        <div class="flex flex-col gap-0.5 text-sm">
+          <a href="https://github.com/sanjeevan43" target="_blank" class="anim-fade-up hover:opacity-60 duration-300"
+            style="animation-delay: 1150ms">GitHub</a>
+          <a href="https://www.linkedin.com/in/sanjeeva-moorthy-m-845917379" target="_blank"
+            class="anim-fade-up hover:opacity-60 duration-300" style="animation-delay: 1230ms">LinkedIn</a>
+          <a href="https://www.instagram.com/sanjeev_amoorthy_" target="_blank"
+            class="anim-fade-up hover:opacity-60 duration-300" style="animation-delay: 1310ms">Instagram</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 6. Hamburger / Close (z-50) (Mobile only) -->
+    <button id="hamburgerBtn"
+      class="absolute right-6 top-6 z-50 h-10 w-10 flex flex-col items-center justify-center sm:hidden anim-fade-up"
+      style="animation-delay: 900ms" aria-label="Toggle menu">
+      <div class="flex flex-col justify-between h-4 w-6 relative">
+        <span class="bar-top w-full h-[2px] bg-cream absolute top-0 left-0"></span>
+        <span class="bar-mid w-full h-[2px] bg-cream absolute top-[7px] left-0"></span>
+        <span class="bar-bot w-full h-[2px] bg-cream absolute bottom-0 left-0"></span>
+      </div>
     </button>
 
-    <!-- ABOUT OVERLAY -->
-    <article
-      id="about-overlay"
-      class="page-overlay px-6 py-20 sm:px-20 sm:py-32"
-    >
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-5xl sm:text-7xl mb-12 tracking-tight">About Me</h2>
-        <div class="space-y-8 text-cream/70 text-lg sm:text-xl leading-relaxed">
-          <p>
-            I'm Sanjeev, a Computer Science student and Full-Stack Developer who
-            enjoys turning ideas into practical, modern digital products.
-          </p>
-          <p>
-            I’m passionate about software development, web technologies, and
-            exploring new ways to build better digital experiences. I enjoy
-            working across both frontend and backend development, understanding
-            how systems work, and turning complex problems into clean and usable
-            solutions.
-          </p>
-          <p>
-            As a developer, I’m continuously learning and experimenting with new
-            technologies. I’m particularly interested in building real-world
-            applications, exploring AI-powered solutions, and improving my
-            skills through hands-on projects.
-          </p>
-          <p>
-            I believe good software is more than just code. It should solve a
-            real problem, provide a great user experience, and be built with
-            simplicity, performance, and scalability in mind.
-          </p>
-          <p>
-            Currently, I’m focused on growing as a software engineer, building
-            meaningful projects, and continuously improving the way I design and
-            develop digital products.
-          </p>
-        </div>
+    <!-- 7. Footer (z-30 / sm:z-10) -->
+    <footer
+      class="absolute inset-x-0 bottom-0 flex items-end justify-between px-6 pb-5 sm:px-10 sm:pb-8 text-xs sm:text-sm leading-relaxed font-hn z-30 sm:z-10">
+      <div class="flex flex-col anim-fade-up" style="animation-delay: 1400ms">
+        <span>Full-Stack Developer</span>
+        <span>Computer Science Student</span>
+        <span>AI Enthusiast</span>
       </div>
-    </article>
-
-    <!-- PROJECTS OVERLAY -->
-    <article
-      id="projects-overlay"
-      class="page-overlay px-6 py-20 sm:px-20 sm:py-32"
-    >
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-5xl sm:text-7xl mb-16 tracking-tight">Featured Work</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-          <a
-            href="https://omniflow-8665a.web.app/"
-            target="_blank"
-            rel="noreferrer"
-            class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500"
-          >
-            <div class="flex justify-between items-start mb-6">
-              <i
-                class="fas fa-layer-group text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"
-              ></i>
-              <svg
-                class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-2xl mb-3 tracking-tight">OmniFlow</h3>
-            <p class="text-cream/50 mb-6 text-sm leading-relaxed">
-              Enterprise-style data import platform for uploading, validating,
-              and mapping CSV data into modern database workflows.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >React</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Firebase</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >AI Mapping</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Data Tools</span
-              >
-            </div>
-          </a>
-
-          <a
-            href="https://onceonthisday.web.app/"
-            target="_blank"
-            rel="noreferrer"
-            class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500"
-          >
-            <div class="flex justify-between items-start mb-6">
-              <i
-                class="fas fa-birthday-cake text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"
-              ></i>
-              <svg
-                class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-2xl mb-3 tracking-tight">OnceOnThisDay</h3>
-            <p class="text-cream/50 mb-6 text-sm leading-relaxed">
-              Generate beautiful, cinematic, and personalized digital birthday
-              cards with custom animations, background music, and photo uploads.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >React</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Firebase</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Web Audio</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >CSS Animations</span
-              >
-            </div>
-          </a>
-
-          <a
-            href="https://wishyfi.vercel.app/"
-            target="_blank"
-            rel="noreferrer"
-            class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500"
-          >
-            <div class="flex justify-between items-start mb-6">
-              <i
-                class="fas fa-magic text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"
-              ></i>
-              <svg
-                class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-2xl mb-3 tracking-tight">WishyFi</h3>
-            <p class="text-cream/50 mb-6 text-sm leading-relaxed">
-              Create beautiful, personalized animated wishes and greetings for
-              special dates and occasions.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >React</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Vite</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Tailwind CSS</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >CSS Animations</span
-              >
-            </div>
-          </a>
-
-          <a
-            href="https://open-vsx.org/extension/sanjeevan43/apexon"
-            target="_blank"
-            rel="noreferrer"
-            class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500"
-          >
-            <div class="flex justify-between items-start mb-6">
-              <i
-                class="fas fa-terminal text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"
-              ></i>
-              <svg
-                class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-2xl mb-3 tracking-tight">Apexon API Sentinel</h3>
-            <p class="text-cream/50 mb-6 text-sm leading-relaxed">
-              VS Code extension for API discovery and testing workflows, built
-              to reduce setup time and make validation faster.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >TypeScript</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >VS Code API</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Developer Tool</span
-              >
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/sanjeevan43"
-            target="_blank"
-            rel="noreferrer"
-            class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500"
-          >
-            <div class="flex justify-between items-start mb-6">
-              <i
-                class="fab fa-github text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"
-              ></i>
-              <svg
-                class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-2xl mb-3 tracking-tight">GitHub Repository</h3>
-            <p class="text-cream/50 mb-6 text-sm leading-relaxed">
-              A growing collection of experiments and projects that show
-              learning range across languages, tools, and product ideas.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Python</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Java</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >SQL</span
-              >
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/sanjeevan43/MovieBookingSystem"
-            target="_blank"
-            rel="noreferrer"
-            class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500"
-          >
-            <div class="flex justify-between items-start mb-6">
-              <i
-                class="fas fa-ticket text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"
-              ></i>
-              <svg
-                class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-2xl mb-3 tracking-tight">
-              Cinema Management System
-            </h3>
-            <p class="text-cream/50 mb-6 text-sm leading-relaxed">
-              Movie booking system with database architecture, user flows, and
-              seat-tracking logic for a practical booking experience.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >SQL</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Backend</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Database Design</span
-              >
-            </div>
-          </a>
-
-          <a
-            href="https://leet-code-ai-solver.vercel.app/"
-            target="_blank"
-            rel="noreferrer"
-            class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500"
-          >
-            <div class="flex justify-between items-start mb-6">
-              <i
-                class="fas fa-brain text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"
-              ></i>
-              <svg
-                class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-2xl mb-3 tracking-tight">AI LeetCode Assistant</h3>
-            <p class="text-cream/50 mb-6 text-sm leading-relaxed">
-              Coding assistant concept for algorithm practice, solution
-              guidance, and AI-supported explanation workflows.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >AI</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >JavaScript</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Web App</span
-              >
-            </div>
-          </a>
-
-          <a
-            href="https://safe-guard-neon.vercel.app/"
-            target="_blank"
-            rel="noreferrer"
-            class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500"
-          >
-            <div class="flex justify-between items-start mb-6">
-              <i
-                class="fas fa-shield-halved text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"
-              ></i>
-              <svg
-                class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-2xl mb-3 tracking-tight">SafeGuard Platform</h3>
-            <p class="text-cream/50 mb-6 text-sm leading-relaxed">
-              Cybersecurity platform concept for monitoring, safety flows, and
-              real-time threat awareness features.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >React</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Node.js</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Security</span
-              >
-            </div>
-          </a>
-
-          <a
-            href="https://play.google.com/store/apps/details?id=com.selvagam.parent&pcampaignid=web_share"
-            target="_blank"
-            rel="noreferrer"
-            class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500"
-          >
-            <div class="flex justify-between items-start mb-6">
-              <i
-                class="fas fa-users-cog text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"
-              ></i>
-              <svg
-                class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-2xl mb-3 tracking-tight">Selvagam Parent App</h3>
-            <p class="text-cream/50 mb-6 text-sm leading-relaxed">
-              Mobile portal for parents to monitor, manage, and coordinate
-              school transportation services.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Python</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Firebase</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >SQL</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Backend</span
-              >
-            </div>
-          </a>
-
-          <a
-            href="https://play.google.com/store/apps/details?id=com.hope3services.selvagamdriver&pcampaignid=web_share"
-            target="_blank"
-            rel="noreferrer"
-            class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500"
-          >
-            <div class="flex justify-between items-start mb-6">
-              <i
-                class="fas fa-bus text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"
-              ></i>
-              <svg
-                class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-2xl mb-3 tracking-tight">Selvagam Driver App</h3>
-            <p class="text-cream/50 mb-6 text-sm leading-relaxed">
-              Driver-side tracking application enabling real-time routing,
-              transit coordinates, and driver metrics.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Python</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Firebase</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >SQL</span
-              ><span
-                class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1"
-                >Realtime DB</span
-              >
-            </div>
-          </a>
-        </div>
+      <div class="flex flex-col text-right anim-fade-up" style="animation-delay: 1550ms">
+        <span>A portfolio by</span>
+        <span>Sanjeeva Moorthy</span>
       </div>
-    </article>
+    </footer>
 
-    <!-- CONTACT OVERLAY -->
-    <article
-      id="contact-overlay"
-      class="page-overlay px-6 py-20 sm:px-20 sm:py-32"
-    >
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-5xl sm:text-7xl mb-12 tracking-tight">Get in Touch</h2>
-        <div class="text-cream/70 text-lg sm:text-xl leading-relaxed mb-12">
-          <p>
-            I'm always open to discussing new projects, creative ideas, or
-            opportunities to be part of your visions.
-          </p>
+    <!-- 8. Mobile Drawer (z-40) -->
+    <div id="drawerBackdrop"
+      class="drawer-backdrop fixed inset-0 z-40 bg-black/40 backdrop-blur-sm pointer-events-none sm:hidden"></div>
+    <aside id="drawerPanel"
+      class="drawer-panel fixed right-0 top-0 bottom-0 z-40 w-[80%] max-w-sm bg-[#141414] px-8 py-10 flex flex-col sm:hidden">
+      <!-- Drawer Close Icon (Lucide X exact SVG) -->
+      <button id="closeBtn" class="absolute right-6 top-6 opacity-0 transition-opacity duration-300"
+        style="transition-delay: 300ms" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-cream">
+          <path d="M18 6 6 18" />
+          <path d="m6 6 12 12" />
+        </svg>
+      </button>
+
+      <div class="flex-1 mt-12 flex flex-col gap-12">
+        <!-- Site Index -->
+        <div class="flex flex-col">
+          <span id="drawerIndexLabel" class="uppercase tracking-[0.2em] text-cream/50 text-xs mb-6 drawer-fade-up"
+            style="transition-delay: 250ms">Site Index</span>
+          <nav class="flex flex-col gap-4 text-4xl">
+            <a href="#" class="drawer-fade-up" style="transition-delay: 300ms">About</a>
+            <a href="#" class="drawer-fade-up" style="transition-delay: 380ms">Projects</a>
+            <a href="#" class="drawer-fade-up" style="transition-delay: 460ms">Contact</a>
+            <a href="resume.html" target="_blank" class="drawer-fade-up" style="transition-delay: 540ms">Resume</a>
+          </nav>
         </div>
-        <div class="flex flex-col gap-6 text-3xl sm:text-5xl tracking-tight">
-          <a
-            href="mailto:sanjeevamoorthy35@gmail.com"
-            class="hover:text-cream/60 transition-colors"
-            >sanjeevamoorthy35@gmail.com</a
-          >
-          <a
-            href="tel:+919080750511"
-            class="hover:text-cream/60 transition-colors"
-            >+91 90807 50511</a
-          >
-          <div class="flex flex-wrap gap-6 mt-4 text-xl sm:text-2xl">
-            <a
-              href="https://www.linkedin.com/in/sanjeeva-moorthy-m-845917379"
-              target="_blank"
-              class="hover:text-cream/60 transition-colors"
-              >LinkedIn ↗</a
-            >
-            <a
-              href="https://github.com/sanjeevan43"
-              target="_blank"
-              class="hover:text-cream/60 transition-colors"
-              >GitHub ↗</a
-            >
-            <a
-              href="https://www.instagram.com/sanjeev_amoorthy_"
-              target="_blank"
-              class="hover:text-cream/60 transition-colors"
-              >Instagram ↗</a
-            >
+
+        <!-- Find Me -->
+        <div class="flex flex-col">
+          <span id="drawerFindLabel" class="uppercase tracking-[0.2em] text-cream/50 text-xs mb-4 drawer-fade-up"
+            style="transition-delay: 500ms">Find Me</span>
+          <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm">
+            <a href="https://github.com/sanjeevan43" target="_blank" class="drawer-fade-up"
+              style="transition-delay: 550ms">GitHub</a>
+            <a href="https://www.linkedin.com/in/sanjeeva-moorthy-m-845917379" target="_blank" class="drawer-fade-up"
+              style="transition-delay: 610ms">LinkedIn</a>
+            <a href="https://www.instagram.com/sanjeev_amoorthy_" target="_blank" class="drawer-fade-up"
+              style="transition-delay: 670ms">Instagram</a>
           </div>
         </div>
       </div>
-    </article>
+    </aside>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- GLOBAL OVERLAY CLOSE BUTTON -->
+  <button id="globalCloseOverlay" class="close-overlay-btn" aria-label="Close page">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-cream">
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
+    </svg>
+  </button>
+
+  <!-- ABOUT OVERLAY -->
+  <article id="about-overlay" class="page-overlay px-6 py-20 sm:px-20 sm:py-32">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-5xl sm:text-7xl mb-12 tracking-tight">About Me</h2>
+      <div class="space-y-8 text-cream/70 text-lg sm:text-xl leading-relaxed">
+        <p>
+          I'm Sanjeev, a Computer Science student and Full-Stack Developer who
+          enjoys turning ideas into practical, modern digital products.
+        </p>
+        <p>
+          I’m passionate about software development, web technologies, and
+          exploring new ways to build better digital experiences. I enjoy
+          working across both frontend and backend development, understanding
+          how systems work, and turning complex problems into clean and usable
+          solutions.
+        </p>
+        <p>
+          As a developer, I’m continuously learning and experimenting with new
+          technologies. I’m particularly interested in building real-world
+          applications, exploring AI-powered solutions, and improving my
+          skills through hands-on projects.
+        </p>
+        <p>
+          I believe good software is more than just code. It should solve a
+          real problem, provide a great user experience, and be built with
+          simplicity, performance, and scalability in mind.
+        </p>
+        <p>
+          Currently, I’m focused on growing as a software engineer, building
+          meaningful projects, and continuously improving the way I design and
+          develop digital products.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- PROJECTS OVERLAY -->
+  <article id="projects-overlay" class="page-overlay px-6 py-20 sm:px-20 sm:py-32">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-5xl sm:text-7xl mb-16 tracking-tight">Featured Work</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <a href="https://omniflow-8665a.web.app/" target="_blank" rel="noreferrer"
+          class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500">
+          <div class="flex justify-between items-start mb-6">
+            <i
+              class="fas fa-layer-group text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"></i>
+            <svg class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-2xl mb-3 tracking-tight">OmniFlow</h3>
+          <p class="text-cream/50 mb-6 text-sm leading-relaxed">
+            Enterprise-style data import platform for uploading, validating,
+            and mapping CSV data into modern database workflows.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">React</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Firebase</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">AI Mapping</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Data Tools</span>
+          </div>
+        </a>
+
+        <a href="https://onceonthisday.web.app/" target="_blank" rel="noreferrer"
+          class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500">
+          <div class="flex justify-between items-start mb-6">
+            <i
+              class="fas fa-birthday-cake text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"></i>
+            <svg class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-2xl mb-3 tracking-tight">OnceOnThisDay</h3>
+          <p class="text-cream/50 mb-6 text-sm leading-relaxed">
+            Generate beautiful, cinematic, and personalized digital birthday
+            cards with custom animations, background music, and photo uploads.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">React</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Firebase</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Web Audio</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">CSS Animations</span>
+          </div>
+        </a>
+
+        <a href="https://wishyfi.vercel.app/" target="_blank" rel="noreferrer"
+          class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500">
+          <div class="flex justify-between items-start mb-6">
+            <i class="fas fa-magic text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"></i>
+            <svg class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-2xl mb-3 tracking-tight">WishyFi</h3>
+          <p class="text-cream/50 mb-6 text-sm leading-relaxed">
+            Create beautiful, personalized animated wishes and greetings for
+            special dates and occasions.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">React</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Vite</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Tailwind CSS</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">CSS Animations</span>
+          </div>
+        </a>
+
+        <a href="https://open-vsx.org/extension/sanjeevan43/apexon" target="_blank" rel="noreferrer"
+          class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500">
+          <div class="flex justify-between items-start mb-6">
+            <i class="fas fa-terminal text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"></i>
+            <svg class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-2xl mb-3 tracking-tight">Apexon API Sentinel</h3>
+          <p class="text-cream/50 mb-6 text-sm leading-relaxed">
+            VS Code extension for API discovery and testing workflows, built
+            to reduce setup time and make validation faster.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">TypeScript</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">VS Code API</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Developer Tool</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/sanjeevan43" target="_blank" rel="noreferrer"
+          class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500">
+          <div class="flex justify-between items-start mb-6">
+            <i class="fab fa-github text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"></i>
+            <svg class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-2xl mb-3 tracking-tight">GitHub Repository</h3>
+          <p class="text-cream/50 mb-6 text-sm leading-relaxed">
+            A growing collection of experiments and projects that show
+            learning range across languages, tools, and product ideas.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Python</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Java</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">SQL</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/sanjeevan43/MovieBookingSystem" target="_blank" rel="noreferrer"
+          class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500">
+          <div class="flex justify-between items-start mb-6">
+            <i class="fas fa-ticket text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"></i>
+            <svg class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-2xl mb-3 tracking-tight">
+            Cinema Management System
+          </h3>
+          <p class="text-cream/50 mb-6 text-sm leading-relaxed">
+            Movie booking system with database architecture, user flows, and
+            seat-tracking logic for a practical booking experience.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">SQL</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Backend</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Database Design</span>
+          </div>
+        </a>
+
+        <a href="https://leet-code-ai-solver.vercel.app/" target="_blank" rel="noreferrer"
+          class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500">
+          <div class="flex justify-between items-start mb-6">
+            <i class="fas fa-brain text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"></i>
+            <svg class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-2xl mb-3 tracking-tight">AI LeetCode Assistant</h3>
+          <p class="text-cream/50 mb-6 text-sm leading-relaxed">
+            Coding assistant concept for algorithm practice, solution
+            guidance, and AI-supported explanation workflows.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">AI</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">JavaScript</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Web App</span>
+          </div>
+        </a>
+
+        <a href="https://safe-guard-neon.vercel.app/" target="_blank" rel="noreferrer"
+          class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500">
+          <div class="flex justify-between items-start mb-6">
+            <i
+              class="fas fa-shield-halved text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"></i>
+            <svg class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-2xl mb-3 tracking-tight">SafeGuard Platform</h3>
+          <p class="text-cream/50 mb-6 text-sm leading-relaxed">
+            Cybersecurity platform concept for monitoring, safety flows, and
+            real-time threat awareness features.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">React</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Node.js</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Security</span>
+          </div>
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.selvagam.parent&pcampaignid=web_share"
+          target="_blank" rel="noreferrer"
+          class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500">
+          <div class="flex justify-between items-start mb-6">
+            <i
+              class="fas fa-users-cog text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"></i>
+            <svg class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-2xl mb-3 tracking-tight">Selvagam Parent App</h3>
+          <p class="text-cream/50 mb-6 text-sm leading-relaxed">
+            Mobile portal for parents to monitor, manage, and coordinate
+            school transportation services.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Python</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Firebase</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">SQL</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Backend</span>
+          </div>
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.hope3services.selvagamdriver&pcampaignid=web_share"
+          target="_blank" rel="noreferrer"
+          class="group block border border-cream/10 rounded-2xl p-8 hover:bg-cream/5 transition-colors duration-500">
+          <div class="flex justify-between items-start mb-6">
+            <i class="fas fa-bus text-4xl text-cream/40 group-hover:text-cream transition-colors duration-500"></i>
+            <svg class="w-5 h-5 text-cream/40 group-hover:text-cream transition-colors duration-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-2xl mb-3 tracking-tight">Selvagam Driver App</h3>
+          <p class="text-cream/50 mb-6 text-sm leading-relaxed">
+            Driver-side tracking application enabling real-time routing,
+            transit coordinates, and driver metrics.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Python</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Firebase</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">SQL</span><span
+              class="text-xs text-cream/50 border border-cream/20 rounded-full px-3 py-1">Realtime DB</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- CONTACT OVERLAY -->
+  <article id="contact-overlay" class="page-overlay px-6 py-20 sm:px-20 sm:py-32">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-5xl sm:text-7xl mb-12 tracking-tight">Get in Touch</h2>
+      <div class="text-cream/70 text-lg sm:text-xl leading-relaxed mb-12">
+        <p>
+          I'm always open to discussing new projects, creative ideas, or
+          opportunities to be part of your visions.
+        </p>
+      </div>
+      <div class="flex flex-col gap-6 text-3xl sm:text-5xl tracking-tight">
+        <a href="mailto:sanjeevamoorthy35@gmail.com"
+          class="hover:text-cream/60 transition-colors">sanjeevamoorthy35@gmail.com</a>
+        <a href="tel:+919080750511" class="hover:text-cream/60 transition-colors">+91 90807 50511</a>
+        <div class="flex flex-wrap gap-6 mt-4 text-xl sm:text-2xl">
+          <a href="https://www.linkedin.com/in/sanjeeva-moorthy-m-845917379" target="_blank"
+            class="hover:text-cream/60 transition-colors">LinkedIn ↗</a>
+          <a href="https://github.com/sanjeevan43" target="_blank" class="hover:text-cream/60 transition-colors">GitHub
+            ↗</a>
+          <a href="https://www.instagram.com/sanjeev_amoorthy_" target="_blank"
+            class="hover:text-cream/60 transition-colors">Instagram ↗</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
