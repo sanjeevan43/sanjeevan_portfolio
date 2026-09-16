@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     about: document.getElementById("about-overlay"),
     projects: document.getElementById("projects-overlay"),
     contact: document.getElementById("contact-overlay"),
+    resume: document.getElementById("resume-overlay"),
   };
 
   const openOverlay = (id) => {
