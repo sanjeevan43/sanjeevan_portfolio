@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { ChatMessage, ModelProgress, AIState } from "../ai/types";
-import { AI_CONFIG } from "../ai/model";
+import { AI_CONFIG, isMobileDevice } from "../ai/model";
 import { supportsWebGPU, getOrInitWebLLMEngine, streamChatResponse } from "../ai/webllm";
 
 export function useAIAssistant() {
@@ -12,7 +12,7 @@ export function useAIAssistant() {
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const isInitializingRef = useRef<boolean>(false);
 
-  // Load chat history from localStorage on mount and start background pre-loading
+  // Load chat history from localStorage on mount and start background pre-loading (desktop only)
   useEffect(() => {
     const hasGPU = supportsWebGPU();
     setIsWebGPUSupported(hasGPU);
@@ -25,16 +25,16 @@ export function useAIAssistant() {
       console.warn("Could not load stored chat history", e);
     }
 
-    // Silently pre-load model assets in background during idle time
-    if (hasGPU) {
+    // Silently pre-load model assets in background during idle time (ONLY on desktop devices)
+    if (hasGPU && !isMobileDevice()) {
       const startPreload = () => {
         initEngine();
       };
 
       if ("requestIdleCallback" in window) {
-        (window as any).requestIdleCallback(startPreload, { timeout: 3000 });
+        (window as any).requestIdleCallback(startPreload, { timeout: 4000 });
       } else {
-        setTimeout(startPreload, 1200);
+        setTimeout(startPreload, 2000);
       }
     }
   }, []);
