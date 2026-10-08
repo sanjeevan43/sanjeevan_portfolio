@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+build/
+
+# IDE & OS files
+.DS_Store
+*.log
+.vscode/
+.idea/
