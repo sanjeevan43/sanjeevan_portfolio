@@ -197,9 +197,9 @@
         }
         @media print {
             body {
-                padding: 0;
-                margin: 0;
-                width: 100%;
+                padding: 0 !important;
+                margin: 0 !important;
+                max-width: 100% !important;
                 font-size: 9.5pt;
                 line-height: 1.35;
                 color: #000;
@@ -216,8 +216,9 @@
                 margin-top: 0.75rem;
                 margin-bottom: 0.35rem;
             }
-            .project-block, section {
+            .project-block {
                 page-break-inside: avoid;
+                break-inside: avoid;
             }
         }
     </style>
