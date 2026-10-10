@@ -42,6 +42,12 @@ export interface PortfolioKnowledge {
   experience: string[];
   services: string[];
   strengths?: string[];
+  aliases?: string[];
+  brandAndVision?: string;
+  challengesAndFailures?: string[];
+  valuesAndMotivation?: string[];
+  unknownsMatrix?: string[];
+  indexKeywords?: Record<string, string>;
   contact: {
     email: string;
     phone: string;
